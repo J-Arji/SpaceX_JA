@@ -11,6 +11,7 @@ import Foundation
 /// This object is part of LaunchesDTO
 extension LaunchesDTO {
     struct DocsDTO : Decodable {
+        let id : String
         let fairings : FairingsDTO?
         let links : LinksDTO?
         let staticFireDateUTC : String?
@@ -37,7 +38,6 @@ extension LaunchesDTO {
         let autoUpdate : Bool?
         let tbd : Bool?
         let launchLibraryId : String?
-        let id : String?
 
         enum CodingKeys: String, CodingKey {
             case id, tbd
@@ -54,6 +54,20 @@ extension LaunchesDTO {
             case launchLibraryId = "launch_library_id"
 
         }
-
     }
+}
+
+
+// MARK: - Extension LoginDTO
+extension LaunchesDTO.DocsDTO {
+    
+    //  MARK: - toLogin
+    /// It creates an Launche object from the LauncheDTO object to use in the domain layer
+    ///
+    /// - returns: Returns a Launche object
+    ///
+    func toDomain() -> Launche {
+        return Launche(self)
+    }
+
 }

@@ -8,7 +8,9 @@
 import Foundation
  
 // MARK: - MissionListRepository
-/// This is repository
+/// This is repository model that it have to implement when we want  have fetch data or save model
+
 protocol MissionListRepository {
+ 
     
 }

@@ -23,7 +23,7 @@ struct LaunchesDTO: Decodable {
 }
 
 extension LaunchesDTO {
-    func toDomain() {
-        
+    func toDomain() -> LaunchesPage {
+        return LaunchesPage(self)
     }
 }
