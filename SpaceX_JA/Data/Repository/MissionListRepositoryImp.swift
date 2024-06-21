@@ -6,6 +6,12 @@
 //
 
 import Foundation
+
 class MissionListRepositoryImp: MissionListRepository {
+    
+    func fetch(input: LaunchInput) async throws -> LaunchesPage {
+        <#code#>
+    }
+    
     
 }

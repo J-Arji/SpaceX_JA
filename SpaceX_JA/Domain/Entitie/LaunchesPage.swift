@@ -6,6 +6,8 @@
 //
 
 import Foundation
+
+// MARK: - LaunchesPage
 struct LaunchesPage {
     let docs: [Launche]
     let totalDocs : Int?
