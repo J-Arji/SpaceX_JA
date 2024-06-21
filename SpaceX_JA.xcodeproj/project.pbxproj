@@ -22,7 +22,15 @@
 		695412BD2C258DB400AA46FD /* MissionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412BC2C258DB400AA46FD /* MissionListViewModel.swift */; };
 		695412C22C259A0700AA46FD /* MissionListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412C12C259A0700AA46FD /* MissionListRepository.swift */; };
 		695412C42C259A8000AA46FD /* MissionListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412C32C259A8000AA46FD /* MissionListRepository.swift */; };
-		695412C72C259E5A00AA46FD /* Docs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412C62C259E5A00AA46FD /* Docs.swift */; };
+		695412C72C259E5A00AA46FD /* LaunchesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412C62C259E5A00AA46FD /* LaunchesDTO.swift */; };
+		695412CA2C25A40500AA46FD /* Launches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412C92C25A40500AA46FD /* Launches.swift */; };
+		695412CC2C25AE3D00AA46FD /* DocsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412CB2C25AE3D00AA46FD /* DocsDTO.swift */; };
+		695412CE2C25AE7E00AA46FD /* FairingsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412CD2C25AE7E00AA46FD /* FairingsDTO.swift */; };
+		695412D02C25AEA500AA46FD /* LinksDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412CF2C25AEA500AA46FD /* LinksDTO.swift */; };
+		695412D22C25B04500AA46FD /* FailuresDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412D12C25B04400AA46FD /* FailuresDTO.swift */; };
+		695412D42C25B11B00AA46FD /* CrewDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412D32C25B11B00AA46FD /* CrewDTO.swift */; };
+		695412D62C25B19C00AA46FD /* CoresDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412D52C25B19C00AA46FD /* CoresDTO.swift */; };
+		695412D82C25B35600AA46FD /* LaunchesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412D72C25B35600AA46FD /* LaunchesPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +51,15 @@
 		695412BC2C258DB400AA46FD /* MissionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListViewModel.swift; sourceTree = "<group>"; };
 		695412C12C259A0700AA46FD /* MissionListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListRepository.swift; sourceTree = "<group>"; };
 		695412C32C259A8000AA46FD /* MissionListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListRepository.swift; sourceTree = "<group>"; };
-		695412C62C259E5A00AA46FD /* Docs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Docs.swift; sourceTree = "<group>"; };
+		695412C62C259E5A00AA46FD /* LaunchesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesDTO.swift; sourceTree = "<group>"; };
+		695412C92C25A40500AA46FD /* Launches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launches.swift; sourceTree = "<group>"; };
+		695412CB2C25AE3D00AA46FD /* DocsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocsDTO.swift; sourceTree = "<group>"; };
+		695412CD2C25AE7E00AA46FD /* FairingsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FairingsDTO.swift; sourceTree = "<group>"; };
+		695412CF2C25AEA500AA46FD /* LinksDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksDTO.swift; sourceTree = "<group>"; };
+		695412D12C25B04400AA46FD /* FailuresDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailuresDTO.swift; sourceTree = "<group>"; };
+		695412D32C25B11B00AA46FD /* CrewDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDTO.swift; sourceTree = "<group>"; };
+		695412D52C25B19C00AA46FD /* CoresDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoresDTO.swift; sourceTree = "<group>"; };
+		695412D72C25B35600AA46FD /* LaunchesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +177,7 @@
 		695412B52C258AC200AA46FD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				695412C82C25A20600AA46FD /* Object */,
 				695412BF2C2598E700AA46FD /* Interface */,
 				695412C02C25995300AA46FD /* Entitie */,
 				695412A72C25824500AA46FD /* Utilities */,
@@ -189,6 +206,8 @@
 		695412C02C25995300AA46FD /* Entitie */ = {
 			isa = PBXGroup;
 			children = (
+				695412C92C25A40500AA46FD /* Launches.swift */,
+				695412D72C25B35600AA46FD /* LaunchesPage.swift */,
 			);
 			path = Entitie;
 			sourceTree = "<group>";
@@ -196,7 +215,20 @@
 		695412C52C259DE500AA46FD /* Object */ = {
 			isa = PBXGroup;
 			children = (
-				695412C62C259E5A00AA46FD /* Docs.swift */,
+				695412C62C259E5A00AA46FD /* LaunchesDTO.swift */,
+				695412CB2C25AE3D00AA46FD /* DocsDTO.swift */,
+				695412D12C25B04400AA46FD /* FailuresDTO.swift */,
+				695412D32C25B11B00AA46FD /* CrewDTO.swift */,
+				695412D52C25B19C00AA46FD /* CoresDTO.swift */,
+				695412CD2C25AE7E00AA46FD /* FairingsDTO.swift */,
+				695412CF2C25AEA500AA46FD /* LinksDTO.swift */,
+			);
+			path = Object;
+			sourceTree = "<group>";
+		};
+		695412C82C25A20600AA46FD /* Object */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -272,16 +304,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				695412C22C259A0700AA46FD /* MissionListRepository.swift in Sources */,
+				695412CE2C25AE7E00AA46FD /* FairingsDTO.swift in Sources */,
+				695412D22C25B04500AA46FD /* FailuresDTO.swift in Sources */,
 				695412792C2479B800AA46FD /* AppDelegate.swift in Sources */,
 				695412AC2C2585FC00AA46FD /* Network.swift in Sources */,
 				695412A22C25739100AA46FD /* SpacexApi.swift in Sources */,
-				695412C72C259E5A00AA46FD /* Docs.swift in Sources */,
+				695412C72C259E5A00AA46FD /* LaunchesDTO.swift in Sources */,
 				695412A52C2576FD00AA46FD /* EnvironmentConstants.swift in Sources */,
 				6954127B2C2479B800AA46FD /* SceneDelegate.swift in Sources */,
+				695412D82C25B35600AA46FD /* LaunchesPage.swift in Sources */,
+				695412CA2C25A40500AA46FD /* Launches.swift in Sources */,
+				695412CC2C25AE3D00AA46FD /* DocsDTO.swift in Sources */,
+				695412D62C25B19C00AA46FD /* CoresDTO.swift in Sources */,
 				6954129C2C24B1E800AA46FD /* HTTPError.swift in Sources */,
+				695412D02C25AEA500AA46FD /* LinksDTO.swift in Sources */,
 				6954129F2C24B75800AA46FD /* Dictionary+Extension.swift in Sources */,
 				695412C42C259A8000AA46FD /* MissionListRepository.swift in Sources */,
 				695412BB2C258DA100AA46FD /* MissionListView.swift in Sources */,
+				695412D42C25B11B00AA46FD /* CrewDTO.swift in Sources */,
 				695412BD2C258DB400AA46FD /* MissionListViewModel.swift in Sources */,
 				695412952C24AAF400AA46FD /* APIClient.swift in Sources */,
 				695412982C24ACBE00AA46FD /* Endpoint.swift in Sources */,
