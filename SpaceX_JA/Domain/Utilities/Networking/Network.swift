@@ -1,13 +1,11 @@
 //
-//  HTTPMethod.swift
+//  Network.swift
 //  SpaceX_JA
 //
-//  Created by javad Arji on 6/20/24.
+//  Created by javad Arji on 6/21/24.
 //
 
 import Foundation
-
-// method
 enum Network {
     enum HTTPMethod: String {
         case get = "GET"
@@ -27,4 +25,3 @@ extension Network {
         static let multipartFormData = "multipart/form-data"
     }
 }
-

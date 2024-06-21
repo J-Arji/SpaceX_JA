@@ -7,15 +7,14 @@
 
 import Foundation
 protocol APIClient {
-    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T
+    func request(_ endpoint: Endpoint) async throws -> Data
 }
 
 class APIClientImp: APIClient {
     
-    init() {
-        
-    }
-    func request<T: Decodable>(_ endpoint: Endpoint) async throws -> T {
+    init() { }
+    
+    func request(_ endpoint: Endpoint) async throws -> Data {
         guard let request = try? endpoint.asURLRequest()
         else { throw  HTTPError.invalidURL }
         
@@ -25,14 +24,14 @@ class APIClientImp: APIClient {
         
         switch response.statusCode {
         case 200..<300:
-            return try await getResponse(type: T.self, data: data)
+            return data
             
         case 400:
             throw HTTPError.badRequest(data)
             
         case 403:
             throw HTTPError.forbidden
-
+            
         default:
             throw HTTPError.unexpectedStatusCode(response.statusCode)
         }

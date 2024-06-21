@@ -16,7 +16,7 @@ protocol Endpoint {
 }
 
 extension Endpoint {
-    var baseURL: String { return Config.serverURL.value + Config.versionURL }
+    var baseURL: String { return SpacexApi.base.url }
     var headers: [String: String]? { nil }
     var body: [String: Any]? { nil }
 }
