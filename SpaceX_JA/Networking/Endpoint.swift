@@ -16,10 +16,7 @@ protocol Endpoint {
 }
 
 extension Endpoint {
-    //TODO: Set base Url
-    var baseURL: String {
-        return ""
-    }
+    var baseURL: String { return Config.serverURL.value + Config.versionURL }
     var headers: [String: String]? { nil }
     var body: [String: Any]? { nil }
 }
