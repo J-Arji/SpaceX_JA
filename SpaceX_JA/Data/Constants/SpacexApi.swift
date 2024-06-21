@@ -21,7 +21,6 @@ enum SpacexApi {
         }
     }
     
-    
     private var baseUrl: String {
         return EnvironmentConstants(rawValue: "SPACEX_SERVER_URL").value
     }
@@ -29,6 +28,12 @@ enum SpacexApi {
     private var versionURL: String {
         return "/V5"
     }
+
 }
 
 
+extension SpacexApi {
+    enum Path {
+        static let query = "launches/query"
+    }
+}

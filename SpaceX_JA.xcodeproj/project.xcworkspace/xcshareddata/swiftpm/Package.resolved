@@ -1,0 +1,15 @@
+{
+  "originHash" : "11eed7bf367bbb91e12ddcbff4c723ba7b7aa663d6a011a7e847f10e18975c6f",
+  "pins" : [
+    {
+      "identity" : "resolver?tab=readme-ov-file",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Resolver?tab=readme-ov-file",
+      "state" : {
+        "revision" : "47602af1ac8d7952299fbd0bda3cfbd12cf3a8ca",
+        "version" : "1.5.1"
+      }
+    }
+  ],
+  "version" : 3
+}

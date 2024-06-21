@@ -7,11 +7,20 @@
 
 import Foundation
 
-class MissionListRepositoryImp: MissionListRepository {
+class MissionListRepository: MissionListRepositoryInterface {
+
+    private let cache: CacheMissionInterface
+    private let service: ServiceMissionList
     
-    func fetch(input: LaunchInput) async throws -> LaunchesPage {
-        <#code#>
+    init(cache: CacheMissionInterface, service: ServiceMissionList) {
+        self.cache = cache
+        self.service = service
     }
     
+    func fetch(input: LaunchInput) async throws -> LaunchesPage {
+        let data = try await service.fetchList(input: input)
+        return data.toDomain()
+    }
+
     
 }

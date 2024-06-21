@@ -16,7 +16,7 @@ protocol Endpoint {
 }
 
 extension Endpoint {
-    var baseURL: String { return SpacexApi.base.url }
+    var baseUrl: String { return SpacexApi.base.url }
     var headers: [String: String]? { nil }
     var body: [String: Any]? { nil }
 }
@@ -29,15 +29,14 @@ extension Endpoint {
     public func asURLRequest() throws -> URLRequest {
         
         /// set the path and create the complete url
-        let url = URL(string: baseURL.appending(path))
+        guard let url = URL(string: baseUrl.appending(path)) else { throw HTTPError.invalidURL }
 
-        var request = URLRequest(url: url!)
+        var request = URLRequest(url: url)
 
         request.httpMethod = method.rawValue
 
         // set the header
         request.allHTTPHeaderFields = headers
-
         request.httpBody = body?.jsonData
 
         return request
