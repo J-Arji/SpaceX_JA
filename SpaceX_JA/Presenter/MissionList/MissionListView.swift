@@ -17,8 +17,12 @@ class MissionListView: UITableViewController {
     private func setupView() {
         self.tableView.register(MissionCell.self)
         self.tableView.separatorStyle = .none
+      
     }
     
+    private func applayTheme() {
+        self.view.backgroundColor = .white
+    }
     
 }
 

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import Resolver
+
+class MissionListViewModel {
+    @Injected var service: MissionListRepository
+}

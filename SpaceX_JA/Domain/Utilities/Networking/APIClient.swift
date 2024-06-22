@@ -36,15 +36,6 @@ class APIClientImp: APIClient {
             throw HTTPError.unexpectedStatusCode(response.statusCode)
         }
     }
-    
-    func getResponse<T: Decodable>(type: T.Type, data: Data) async throws -> T {
-        do {
-            let response = try JSONDecoder().decode(type.self, from: data)
-            return response
-        } catch {
-            throw HTTPError.decode(error.localizedDescription)
-        }
-    }
 }
     
 

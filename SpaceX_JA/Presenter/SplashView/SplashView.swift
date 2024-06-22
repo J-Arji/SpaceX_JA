@@ -23,7 +23,7 @@ class SplashView: UIViewController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .white
         setupView()
         bindMonitoring()
     }

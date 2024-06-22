@@ -39,7 +39,7 @@
 		695412E92C261B1A00AA46FD /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 695412E82C261B1A00AA46FD /* Resolver */; };
 		695412EB2C261B1A00AA46FD /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 695412EA2C261B1A00AA46FD /* Resolver-Dynamic */; };
 		695412ED2C261B1A00AA46FD /* Resolver-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 695412EC2C261B1A00AA46FD /* Resolver-Static */; };
-		695412EF2C261C3E00AA46FD /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412EE2C261C3E00AA46FD /* AppDelegate+Injection.swift */; };
+		695412EF2C261C3E00AA46FD /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412EE2C261C3E00AA46FD /* App+Injection.swift */; };
 		695412F22C26251000AA46FD /* CacheLaunchInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F12C26251000AA46FD /* CacheLaunchInterface.swift */; };
 		695412F42C26296500AA46FD /* ServiceMissionListImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F32C26296500AA46FD /* ServiceMissionListImp.swift */; };
 		695412F72C2754E400AA46FD /* MissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F62C2754E400AA46FD /* MissionCell.swift */; };
@@ -82,7 +82,7 @@
 		695412E12C2613D800AA46FD /* Codable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Extension.swift"; sourceTree = "<group>"; };
 		695412E32C26162500AA46FD /* LaunchInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInput.swift; sourceTree = "<group>"; };
 		695412E52C26176100AA46FD /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
-		695412EE2C261C3E00AA46FD /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		695412EE2C261C3E00AA46FD /* App+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App+Injection.swift"; sourceTree = "<group>"; };
 		695412F12C26251000AA46FD /* CacheLaunchInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLaunchInterface.swift; sourceTree = "<group>"; };
 		695412F32C26296500AA46FD /* ServiceMissionListImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMissionListImp.swift; sourceTree = "<group>"; };
 		695412F62C2754E400AA46FD /* MissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCell.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				695412782C2479B800AA46FD /* AppDelegate.swift */,
-				695412EE2C261C3E00AA46FD /* AppDelegate+Injection.swift */,
+				695412EE2C261C3E00AA46FD /* App+Injection.swift */,
 				695412FD2C2765D400AA46FD /* AppFlowDelegate.swift */,
 				6954127A2C2479B800AA46FD /* SceneDelegate.swift */,
 				695412B42C258AB900AA46FD /* Presenter */,
@@ -394,7 +394,7 @@
 				695412A22C25739100AA46FD /* SpacexApi.swift in Sources */,
 				695412F22C26251000AA46FD /* CacheLaunchInterface.swift in Sources */,
 				695412DA2C25F8CE00AA46FD /* Date+Extension.swift in Sources */,
-				695412EF2C261C3E00AA46FD /* AppDelegate+Injection.swift in Sources */,
+				695412EF2C261C3E00AA46FD /* App+Injection.swift in Sources */,
 				695412C72C259E5A00AA46FD /* LaunchesDTO.swift in Sources */,
 				695412A52C2576FD00AA46FD /* EnvironmentConstants.swift in Sources */,
 				695412E62C26176100AA46FD /* Sort.swift in Sources */,

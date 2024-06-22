@@ -10,7 +10,7 @@ import Foundation
 // MARK: - MissionListRepository
 /// This is repository model that it have to implement when we want  have fetch data or save model
 
-protocol MissionListRepositoryInterface {
+protocol MissionListRepository {
     //  MARK: - fetch
     ///
     /// - parameter input: launch query input

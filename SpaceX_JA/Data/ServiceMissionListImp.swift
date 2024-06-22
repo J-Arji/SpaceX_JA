@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import Resolver
+
 protocol ServiceMissionList {
     func fetchList(input: LaunchInput) async throws -> LaunchesDTO
 }
 
 class ServiceMissionListImp: ServiceMissionList {
-    private let client: APIClient
-    init(client: APIClient) {
-        self.client = client
-    }
+    @Injected private var client: APIClient
+
 
     func fetchList(input: LaunchInput) async throws -> LaunchesDTO {
         let data = try await client.request(Router.list(input: input))

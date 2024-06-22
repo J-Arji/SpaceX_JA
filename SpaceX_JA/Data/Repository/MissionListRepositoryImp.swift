@@ -6,17 +6,12 @@
 //
 
 import Foundation
+import Resolver
+class MissionListRepositoryImp: MissionListRepository {
 
-class MissionListRepository: MissionListRepositoryInterface {
+    @Injected private var cache: CacheMissionInterface
+    @Injected private var remote: ServiceMissionList
 
-    private let cache: CacheMissionInterface
-    private let remote: ServiceMissionList
-    
-    init(cache: CacheMissionInterface, remote: ServiceMissionList) {
-        self.cache = cache
-        self.remote = remote
-    }
-    
     func fetch(input: LaunchInput) async throws -> LaunchesPage {
         let data = try await remote.fetchList(input: input)
         return data.toDomain()
