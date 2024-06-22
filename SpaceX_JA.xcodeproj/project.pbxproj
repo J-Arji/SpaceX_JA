@@ -45,6 +45,9 @@
 		695412F72C2754E400AA46FD /* MissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F62C2754E400AA46FD /* MissionCell.swift */; };
 		695412F92C27585E00AA46FD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F82C27585E00AA46FD /* GradientView.swift */; };
 		695412FC2C27622C00AA46FD /* ReusableView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */; };
+		695412FE2C2765D400AA46FD /* AppFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412FD2C2765D400AA46FD /* AppFlowDelegate.swift */; };
+		695413002C27675D00AA46FD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412FF2C27675D00AA46FD /* NetworkMonitor.swift */; };
+		695413022C2768DE00AA46FD /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695413012C2768DE00AA46FD /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		695412F62C2754E400AA46FD /* MissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCell.swift; sourceTree = "<group>"; };
 		695412F82C27585E00AA46FD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extention.swift"; sourceTree = "<group>"; };
+		695412FD2C2765D400AA46FD /* AppFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowDelegate.swift; sourceTree = "<group>"; };
+		695412FF2C27675D00AA46FD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		695413012C2768DE00AA46FD /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 			children = (
 				695412782C2479B800AA46FD /* AppDelegate.swift */,
 				695412EE2C261C3E00AA46FD /* AppDelegate+Injection.swift */,
+				695412FD2C2765D400AA46FD /* AppFlowDelegate.swift */,
 				6954127A2C2479B800AA46FD /* SceneDelegate.swift */,
 				695412B42C258AB900AA46FD /* Presenter */,
 				695412B52C258AC200AA46FD /* Domain */,
@@ -137,6 +144,7 @@
 				695412942C24AAF400AA46FD /* APIClient.swift */,
 				695412972C24ACBE00AA46FD /* Endpoint.swift */,
 				695412AB2C2585FC00AA46FD /* Network.swift */,
+				695412FF2C27675D00AA46FD /* NetworkMonitor.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 			children = (
 				695412BA2C258DA100AA46FD /* MissionListView.swift */,
 				695412BC2C258DB400AA46FD /* MissionListViewModel.swift */,
+				695412F52C2754CA00AA46FD /* View */,
 			);
 			path = MissionList;
 			sourceTree = "<group>";
@@ -200,10 +209,10 @@
 		695412B42C258AB900AA46FD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				695412FA2C27622300AA46FD /* Extension */,
-				695412F52C2754CA00AA46FD /* View */,
+				695413032C2768E100AA46FD /* SplashView */,
 				695412B22C258A7900AA46FD /* MissionList */,
 				695412B32C258A9F00AA46FD /* MissionDetail */,
+				695412FA2C27622300AA46FD /* Extension */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -286,6 +295,14 @@
 				695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		695413032C2768E100AA46FD /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				695413012C2768DE00AA46FD /* SplashView.swift */,
+			);
+			path = SplashView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +399,8 @@
 				695412A52C2576FD00AA46FD /* EnvironmentConstants.swift in Sources */,
 				695412E62C26176100AA46FD /* Sort.swift in Sources */,
 				695412FC2C27622C00AA46FD /* ReusableView+Extention.swift in Sources */,
+				695412FE2C2765D400AA46FD /* AppFlowDelegate.swift in Sources */,
+				695413022C2768DE00AA46FD /* SplashView.swift in Sources */,
 				695412F42C26296500AA46FD /* ServiceMissionListImp.swift in Sources */,
 				6954127B2C2479B800AA46FD /* SceneDelegate.swift in Sources */,
 				695412D82C25B35600AA46FD /* LaunchesPage.swift in Sources */,
@@ -392,6 +411,7 @@
 				695412F92C27585E00AA46FD /* GradientView.swift in Sources */,
 				695412D02C25AEA500AA46FD /* LinksDTO.swift in Sources */,
 				695412DC2C25F8E100AA46FD /* String+Extension.swift in Sources */,
+				695413002C27675D00AA46FD /* NetworkMonitor.swift in Sources */,
 				695412E22C2613D800AA46FD /* Codable+Extension.swift in Sources */,
 				6954129F2C24B75800AA46FD /* Dictionary+Extension.swift in Sources */,
 				695412BB2C258DA100AA46FD /* MissionListView.swift in Sources */,
@@ -546,8 +566,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceX_JA/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
@@ -575,8 +595,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceX_JA/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.6;

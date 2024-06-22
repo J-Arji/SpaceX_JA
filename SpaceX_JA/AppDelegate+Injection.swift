@@ -17,7 +17,7 @@ extension Resolver {
     
     //MARK: - register Mission List
     public static func registerMissionLayer() {
-        register { MissionListRepository(cache: resolve(), service: resolve())}
+        register { MissionListRepository(cache: resolve(), remote: resolve())}
         register { ServiceMissionListImp(client: APIClientImp()) }
         register { CacheMissionImp() }
     }

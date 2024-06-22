@@ -10,15 +10,15 @@ import Foundation
 class MissionListRepository: MissionListRepositoryInterface {
 
     private let cache: CacheMissionInterface
-    private let service: ServiceMissionList
+    private let remote: ServiceMissionList
     
-    init(cache: CacheMissionInterface, service: ServiceMissionList) {
+    init(cache: CacheMissionInterface, remote: ServiceMissionList) {
         self.cache = cache
-        self.service = service
+        self.remote = remote
     }
     
     func fetch(input: LaunchInput) async throws -> LaunchesPage {
-        let data = try await service.fetchList(input: input)
+        let data = try await remote.fetchList(input: input)
         return data.toDomain()
     }
 
