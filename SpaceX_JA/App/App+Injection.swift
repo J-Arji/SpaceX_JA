@@ -18,9 +18,9 @@ extension Resolver: ResolverRegistering {
     //MARK: - register Mission List
     public static func registerMissionLayer() {
         register { APIClientImp() }.implements(APIClient.self)
-        register { MissionListRepositoryImp()}.implements(MissionListRepository.self)
-        register { ServiceMissionListImp() }.implements(ServiceMissionList.self)
-        register { CacheMissionImp()}.implements(CacheMissionInterface.self)
+        register { MissionListRepositoryImp() }.implements(MissionListRepository.self)
+        register { MissionRemoteDataSourceImp() }.implements(MissionRemoteDataSource.self)
+        register { MissionLocalDataSourceImp()}.implements(MissionLocalDataSource.self)
     }
     
     

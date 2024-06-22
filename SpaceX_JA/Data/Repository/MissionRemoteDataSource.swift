@@ -8,22 +8,21 @@
 import Foundation
 import Resolver
 
-protocol ServiceMissionList {
+protocol MissionRemoteDataSource {
     func fetchList(input: LaunchInput) async throws -> LaunchesDTO
 }
 
-class ServiceMissionListImp: ServiceMissionList {
+class MissionRemoteDataSourceImp: MissionRemoteDataSource {
     @Injected private var client: APIClient
-
 
     func fetchList(input: LaunchInput) async throws -> LaunchesDTO {
         let data = try await client.request(Router.list(input: input))
-        return try JSONDecoder().decode(LaunchesDTO.self, from: data)
+        return try data.decoded() as LaunchesDTO
     }
 }
 
 
-extension ServiceMissionListImp {
+extension MissionRemoteDataSourceImp {
     enum Router: Endpoint {
         case list(input: LaunchInput)
         

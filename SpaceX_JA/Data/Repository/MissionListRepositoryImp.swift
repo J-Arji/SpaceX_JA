@@ -9,8 +9,8 @@ import Foundation
 import Resolver
 class MissionListRepositoryImp: MissionListRepository {
 
-    @Injected private var cache: CacheMissionInterface
-    @Injected private var remote: ServiceMissionList
+    @Injected private var cache: MissionLocalDataSource
+    @Injected private var remote: MissionRemoteDataSource
 
     func fetch(input: LaunchInput) async throws -> LaunchesPage {
         let data = try await remote.fetchList(input: input)

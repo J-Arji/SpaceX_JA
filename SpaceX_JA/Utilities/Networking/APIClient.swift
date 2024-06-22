@@ -11,9 +11,7 @@ protocol APIClient {
 }
 
 class APIClientImp: APIClient {
-    
-    init() { }
-    
+        
     func request(_ endpoint: Endpoint) async throws -> Data {
         guard let request = try? endpoint.asURLRequest()
         else { throw  HTTPError.invalidURL }

@@ -15,7 +15,7 @@ struct LaunchInput: Encodable {
 
 //MARK: - initializer
 extension LaunchInput {
-    init(upcoming: Bool, limit: Int, page: Int, sort: Sort = Sort(flightNumber: .desc)) {
+    init(upcoming: Bool = false, limit: Int, page: Int, sort: Sort = Sort(flightNumber: .desc)) {
         self.query = Query(upcoming: upcoming)
         self.options = Option(limit: limit, page: page, sort: sort)
     }
