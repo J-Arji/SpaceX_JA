@@ -15,7 +15,6 @@ class ServiceMissionListImp: ServiceMissionList {
     init(client: APIClient) {
         self.client = client
     }
-    
 
     func fetchList(input: LaunchInput) async throws -> LaunchesDTO {
         let data = try await client.request(Router.list(input: input))

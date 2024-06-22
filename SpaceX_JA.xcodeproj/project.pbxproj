@@ -42,6 +42,9 @@
 		695412EF2C261C3E00AA46FD /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412EE2C261C3E00AA46FD /* AppDelegate+Injection.swift */; };
 		695412F22C26251000AA46FD /* CacheLaunchInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F12C26251000AA46FD /* CacheLaunchInterface.swift */; };
 		695412F42C26296500AA46FD /* ServiceMissionListImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F32C26296500AA46FD /* ServiceMissionListImp.swift */; };
+		695412F72C2754E400AA46FD /* MissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F62C2754E400AA46FD /* MissionCell.swift */; };
+		695412F92C27585E00AA46FD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F82C27585E00AA46FD /* GradientView.swift */; };
+		695412FC2C27622C00AA46FD /* ReusableView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +82,9 @@
 		695412EE2C261C3E00AA46FD /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		695412F12C26251000AA46FD /* CacheLaunchInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLaunchInterface.swift; sourceTree = "<group>"; };
 		695412F32C26296500AA46FD /* ServiceMissionListImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceMissionListImp.swift; sourceTree = "<group>"; };
+		695412F62C2754E400AA46FD /* MissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCell.swift; sourceTree = "<group>"; };
+		695412F82C27585E00AA46FD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,8 @@
 		695412B42C258AB900AA46FD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				695412FA2C27622300AA46FD /* Extension */,
+				695412F52C2754CA00AA46FD /* View */,
 				695412B22C258A7900AA46FD /* MissionList */,
 				695412B32C258A9F00AA46FD /* MissionDetail */,
 			);
@@ -261,6 +269,23 @@
 				695412DF2C25FD5E00AA46FD /* MissionListRepositoryImp.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		695412F52C2754CA00AA46FD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				695412F62C2754E400AA46FD /* MissionCell.swift */,
+				695412F82C27585E00AA46FD /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		695412FA2C27622300AA46FD /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +371,7 @@
 				695412D22C25B04500AA46FD /* FailuresDTO.swift in Sources */,
 				695412792C2479B800AA46FD /* AppDelegate.swift in Sources */,
 				695412AC2C2585FC00AA46FD /* Network.swift in Sources */,
+				695412F72C2754E400AA46FD /* MissionCell.swift in Sources */,
 				695412E42C26162500AA46FD /* LaunchInput.swift in Sources */,
 				695412E02C25FD5E00AA46FD /* MissionListRepositoryImp.swift in Sources */,
 				695412A22C25739100AA46FD /* SpacexApi.swift in Sources */,
@@ -355,6 +381,7 @@
 				695412C72C259E5A00AA46FD /* LaunchesDTO.swift in Sources */,
 				695412A52C2576FD00AA46FD /* EnvironmentConstants.swift in Sources */,
 				695412E62C26176100AA46FD /* Sort.swift in Sources */,
+				695412FC2C27622C00AA46FD /* ReusableView+Extention.swift in Sources */,
 				695412F42C26296500AA46FD /* ServiceMissionListImp.swift in Sources */,
 				6954127B2C2479B800AA46FD /* SceneDelegate.swift in Sources */,
 				695412D82C25B35600AA46FD /* LaunchesPage.swift in Sources */,
@@ -362,6 +389,7 @@
 				695412CC2C25AE3D00AA46FD /* DocsDTO.swift in Sources */,
 				695412D62C25B19C00AA46FD /* CoresDTO.swift in Sources */,
 				6954129C2C24B1E800AA46FD /* HTTPError.swift in Sources */,
+				695412F92C27585E00AA46FD /* GradientView.swift in Sources */,
 				695412D02C25AEA500AA46FD /* LinksDTO.swift in Sources */,
 				695412DC2C25F8E100AA46FD /* String+Extension.swift in Sources */,
 				695412E22C2613D800AA46FD /* Codable+Extension.swift in Sources */,
