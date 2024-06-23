@@ -17,5 +17,5 @@ protocol MissionListRepository {
     /// - throws: DataTransferError
     /// - returns: Returns a LaunchesPage Model
     ///
+    func fetch(input: LaunchInput) async throws -> LaunchesPage
 }
-

@@ -45,7 +45,7 @@ class MissionListView: UITableViewController {
             docs.append(contentsOf: items)
             tableView.reloadData()
             
-        case let .error(messge):
+        case let .error(_):
             //TODO: show Error message
             break;
         
@@ -65,8 +65,8 @@ class MissionListView: UITableViewController {
     // MARK: - Action
     func showDetailView(input: Launche) {
         //TODO: show Detail
-        var viewModel = MissionDetailViewModel(mission: input)
-        let vc = MissonDetailView(viewModel)
+        let viewModel = MissionDetailViewModel(mission: input)
+        let vc = MissionDetailView(viewModel)
         push(vc)
     }
     
