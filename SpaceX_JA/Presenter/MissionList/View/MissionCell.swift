@@ -12,7 +12,7 @@ class MissionCell: UITableViewCell {
     let margin = 8.0
 
     //MARK: - Properties
-    private lazy var icon: UIImageView = {
+    private lazy var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
@@ -76,6 +76,13 @@ class MissionCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        if let gradient = gradientView.layer.sublayers?[0] as? CAGradientLayer {
+            gradient.frame = self.bounds
+        }
+    }
+    
     private func commonInit() {
         setupLayout()
         applaytheme()
@@ -86,26 +93,28 @@ class MissionCell: UITableViewCell {
         numberLabel.font = .systemFont(ofSize: 15, weight: .heavy)
         descriptionLabel.font = .systemFont(ofSize: 10, weight: .thin)
         statusLabel.font = .systemFont(ofSize: 12, weight: .semibold)
+        
     }
     
     private func setupLayout() {
-        self.contentView.addSubview(icon)
+        self.contentView.addSubview(iconImageView)
         self.contentView.addSubview(gradientView)
         self.gradientView.addSubview(totalStackView)
+        
         /// icon
         NSLayoutConstraint.activate([
-            icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: margin),
-            icon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -margin),
-            icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margin),
-            icon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -margin),
-            icon.heightAnchor.constraint(equalToConstant: 250)
+            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: margin),
+            iconImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -margin),
+            iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margin),
+            iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -margin),
+            iconImageView.heightAnchor.constraint(equalToConstant: 250)
         ])
         /// gradientView
         NSLayoutConstraint.activate([
-            gradientView.bottomAnchor.constraint(equalTo: icon.bottomAnchor),
-            gradientView.leadingAnchor.constraint(equalTo: icon.leadingAnchor),
-            gradientView.trailingAnchor.constraint(equalTo: icon.trailingAnchor),
-            gradientView.heightAnchor.constraint(equalTo: icon.heightAnchor, multiplier: 0.4)
+            gradientView.bottomAnchor.constraint(equalTo: iconImageView.bottomAnchor),
+            gradientView.leadingAnchor.constraint(equalTo: iconImageView.leadingAnchor),
+            gradientView.trailingAnchor.constraint(equalTo: iconImageView.trailingAnchor),
+            gradientView.heightAnchor.constraint(equalTo: iconImageView.heightAnchor, multiplier: 0.4)
         ])
         
         /// totalStackView
@@ -125,7 +134,7 @@ class MissionCell: UITableViewCell {
     
     //MARK: - Set
     public func set(icon url: String?) {
-        
+        self.iconImageView.setRemoteImage(with: url, placeholder:  UIImage(named: "placeholder"))
     }
     
     public func set(status isSuccess: Bool) {

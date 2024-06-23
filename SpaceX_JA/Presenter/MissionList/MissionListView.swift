@@ -34,6 +34,9 @@ class MissionListView: UITableViewController {
     
     private func updateState(_ state: MissionListViewModel.State) {
         switch state {
+        case .idle, .loading:
+            //TODO: show Progress view
+            break;
         case .empty:
             //TODO: show empty state
             break;
@@ -45,10 +48,7 @@ class MissionListView: UITableViewController {
         case let .error(messge):
             //TODO: show Error message
             break;
-            
-        case .idle, .loading:
-            //TODO: show Progress view
-            break;
+        
         }
     }
     
