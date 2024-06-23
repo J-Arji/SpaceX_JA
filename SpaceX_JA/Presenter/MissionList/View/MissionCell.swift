@@ -9,7 +9,7 @@ import UIKit
 
 class MissionCell: UITableViewCell {
     
-    let margin = 8.0
+    let margin = 16.0
 
     //MARK: - Properties
     private lazy var iconImageView: UIImageView = {
@@ -21,6 +21,7 @@ class MissionCell: UITableViewCell {
     
     private lazy var numberLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.numberOfLines = 1
         return label
@@ -35,35 +36,39 @@ class MissionCell: UITableViewCell {
     
     private lazy var statusLabel: UILabel = {
         var label = UILabel()
-        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .left
         label.numberOfLines = 1
         return label
     }()
     
-    private lazy var gradientView: GradientView = {
-        var view = GradientView()
-        view.translatesAutoresizingMaskIntoConstraints = false 
-        return view
+    private  lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
+        label.numberOfLines = 1
+        return label
     }()
+
     
     private lazy var totalStackView: UIStackView = {
-        var vStack = UIStackView()
-        vStack.translatesAutoresizingMaskIntoConstraints = false
-        vStack.axis = .vertical
-        vStack.spacing = 4
-        vStack.distribution = .fill
-        vStack.alignment = .fill
-        return vStack
-    }()
-    
-    private lazy var headerStackView: UIStackView = {
         var hStack = UIStackView()
         hStack.translatesAutoresizingMaskIntoConstraints = false
         hStack.axis = .horizontal
-        hStack.spacing = margin
+        hStack.spacing = 8
         hStack.distribution = .fill
-        hStack.alignment = .fill
+        hStack.alignment = .top
         return hStack
+    }()
+
+    
+    private lazy var infoStackView: UIStackView = {
+        var vStack = UIStackView()
+        vStack.axis = .vertical
+        vStack.spacing = margin/2
+        vStack.distribution = .fill
+        vStack.alignment = .fill
+        return vStack
     }()
     
     //MARK: - initilazer
@@ -76,12 +81,6 @@ class MissionCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSublayers(of layer: CALayer) {
-        super.layoutSublayers(of: layer)
-        if let gradient = gradientView.layer.sublayers?[0] as? CAGradientLayer {
-            gradient.frame = self.bounds
-        }
-    }
     
     private func commonInit() {
         setupLayout()
@@ -91,44 +90,33 @@ class MissionCell: UITableViewCell {
     //MARK: - setup
     private func applaytheme() {
         numberLabel.font = .systemFont(ofSize: 15, weight: .heavy)
-        descriptionLabel.font = .systemFont(ofSize: 10, weight: .thin)
+        descriptionLabel.font = .systemFont(ofSize: 11, weight: .thin)
         statusLabel.font = .systemFont(ofSize: 12, weight: .semibold)
-        
+        dateLabel.font = .systemFont(ofSize: 9, weight: .light)
     }
     
     private func setupLayout() {
-        self.contentView.addSubview(iconImageView)
-        self.contentView.addSubview(gradientView)
-        self.gradientView.addSubview(totalStackView)
+        self.contentView.addSubview(totalStackView)
+        totalStackView.addArrangedSubview(iconImageView)
+        totalStackView.addArrangedSubview(infoStackView)
+        infoStackView.addArrangedSubview(numberLabel)
+        infoStackView.addArrangedSubview(statusLabel)
+        infoStackView.addArrangedSubview(descriptionLabel)
+        infoStackView.addArrangedSubview(dateLabel)
         
         /// icon
         NSLayoutConstraint.activate([
-            iconImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: margin),
-            iconImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -margin),
-            iconImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margin),
-            iconImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -margin),
-            iconImageView.heightAnchor.constraint(equalToConstant: 250)
+            dateLabel.heightAnchor.constraint(equalToConstant: 15),
+            statusLabel.heightAnchor.constraint(equalToConstant: 20),
+            numberLabel.heightAnchor.constraint(equalTo: statusLabel.heightAnchor, multiplier: 1),
+            iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor, multiplier: 1),
+            iconImageView.heightAnchor.constraint(equalToConstant: 50),
+            totalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: margin),
+            totalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -margin),
+            totalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margin),
+            totalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -margin),
+            totalStackView.heightAnchor.constraint(equalToConstant: 120)
         ])
-        /// gradientView
-        NSLayoutConstraint.activate([
-            gradientView.bottomAnchor.constraint(equalTo: iconImageView.bottomAnchor),
-            gradientView.leadingAnchor.constraint(equalTo: iconImageView.leadingAnchor),
-            gradientView.trailingAnchor.constraint(equalTo: iconImageView.trailingAnchor),
-            gradientView.heightAnchor.constraint(equalTo: iconImageView.heightAnchor, multiplier: 0.4)
-        ])
-        
-        /// totalStackView
-        NSLayoutConstraint.activate([
-            totalStackView.heightAnchor.constraint(equalTo: gradientView.heightAnchor),
-            totalStackView.widthAnchor.constraint(equalTo: gradientView.widthAnchor),
-            totalStackView.centerXAnchor.constraint(equalTo: gradientView.centerXAnchor),
-            totalStackView.centerYAnchor.constraint(equalTo: gradientView.centerYAnchor)
-        ])
-        
-        totalStackView.addArrangedSubview(headerStackView)
-        totalStackView.addArrangedSubview(descriptionLabel)
-        headerStackView.addArrangedSubview(numberLabel)
-        headerStackView.addArrangedSubview(statusLabel)
     }
      
     
@@ -143,11 +131,15 @@ class MissionCell: UITableViewCell {
     }
     
     public func set(flight number: Int) {
-        numberLabel.text = "\(number)"
+        numberLabel.text = "Number: \(number)"
     }
     
     public func set(description: String?) {
         descriptionLabel.text = description
+    }
+    
+    public func set(date: String?) {
+        dateLabel.text = date
     }
     
     

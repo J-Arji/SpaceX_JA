@@ -12,7 +12,6 @@ extension Date {
         let formatter = DateFormatter()
         formatter.dateFormat =  "yyyy-MM-dd'T'HH:mm:ssZ"
         formatter.calendar = .current
-        formatter.timeZone = .current
         formatter.dateStyle = .medium
         return formatter.string(from: self)
         

@@ -28,7 +28,7 @@ extension Launche {
         id = dto.id
         name = dto.name ?? ""
         flightNumber = dto.flightNumber
-        dateUTC = dto.staticFireDateUTC?.toDate
+        dateUTC = dto.dateUTC?.toDate
         success = dto.success
         details = dto.details
         wikipediaLink = dto.links?.wikipedia

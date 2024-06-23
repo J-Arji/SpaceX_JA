@@ -83,6 +83,7 @@ extension MissionListView {
         cell.set(flight: item.flightNumber)
         cell.set(status: item.success ?? false)
         cell.set(description: item.details)
+        cell.set(date: item.dateUTC?.toString)
         return cell
     }
     
