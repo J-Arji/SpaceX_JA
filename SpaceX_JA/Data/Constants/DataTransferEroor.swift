@@ -1,12 +1,12 @@
 //
-//  HTTPError.swift
+//  DataTransferError.swift
 //  SpaceX_JA
 //
 //  Created by javad Arji on 6/20/24.
 //
 
 import Foundation
-enum HTTPError: Error {
+enum DataTransferError: Error {
     case decode(String)
     case invalidURL
     case noResponse
@@ -18,7 +18,7 @@ enum HTTPError: Error {
 
 }
 
-extension HTTPError {
+extension DataTransferError {
     var description: String {
         switch self {
         case .noNetworkConnectivity: return "no network connectivity"

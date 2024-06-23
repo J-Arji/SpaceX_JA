@@ -17,5 +17,16 @@ class MissionListRepositoryImp: MissionListRepository {
         return data.toDomain()
     }
 
+    func fetch(key: String) async throws -> Launche {
+       let data = try await cache.fetch(key: key)
+        return data.toDomain()
+    }
     
+    func save(object: Launche) async throws {
+       try await cache.save(object: object.toEntitiy())
+    }
+    
+    func remove(key: String) async throws {
+        try await cache.remove(key: key)
+    }
 }

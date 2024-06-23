@@ -14,7 +14,7 @@ protocol MissionListRepository {
     //  MARK: - fetch
     ///
     /// - parameter input: launch query input
-    /// - throws: HTTPError
+    /// - throws: DataTransferError
     /// - returns: Returns a LaunchesPage Model
     ///
     func fetch(input: LaunchInput) async throws -> LaunchesPage
@@ -22,8 +22,25 @@ protocol MissionListRepository {
     //  MARK: - save
     ///
     /// - parameter value: object
-    ///  - throws: HTTPError
+    ///  - throws: DataTransferError
     /// - returns: Returns a persist data or not
     ///
+    func fetch(key: String) async throws -> Launche
+    
+    //  MARK: - save
+    ///
+    /// - parameter object: The object to be added to the Realm.
+    /// - throws: DataTransferError
+    /// - returns: Only updates the properties of the existing object that have different
+    ///
+    func save(object: Launche) async throws
+    
+    //  MARK: - remove
+    ///
+    /// - parameter key: The key to be remove to the Realm.
+    /// - throws: DataTransferError
+    /// - returns: Only updates the properties of the existing object that have different
+    ///
+    func remove(key: String) async throws
 
 }

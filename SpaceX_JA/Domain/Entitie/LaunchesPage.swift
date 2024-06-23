@@ -26,3 +26,4 @@ extension LaunchesPage {
         nextPage = dto.nextPage ?? 1
     }
 }
+
