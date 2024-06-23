@@ -10,9 +10,9 @@ import Foundation
 // MARK: - LaunchesPage
 struct LaunchesPage {
     let docs: [Launche]
-    let totalDocs : Int?
-    let totalPages : Int?
     let page : Int?
+    let hasNextPage: Bool
+    let nextPage: Int
 }
 
 // MARK: - Extension LaunchesPage
@@ -21,9 +21,8 @@ extension LaunchesPage {
     /// Creates an instance of Launches struct with given LaunchesDTO
     init(_ dto: LaunchesDTO) {
         docs = dto.docs.map{ $0.toDomain() }
-        totalDocs = dto.totalDocs
-        totalPages = dto.totalPages
         page = dto.page
-        
+        hasNextPage = dto.hasNextPage ?? false 
+        nextPage = dto.nextPage ?? 1
     }
 }
