@@ -9,9 +9,8 @@ import UIKit
 //MARK: - NavigationProtocol
 protocol NavigationProtocol: AnyObject {
     func push(_ vc: UIViewController)
-    func openURL(_ name: URL, completion: ((Bool) -> Void)?)
+    func present(_ vc: UIViewController)
     func openURL(with path: String, completion: ((Bool) -> Void)?)
-
 }
 
 

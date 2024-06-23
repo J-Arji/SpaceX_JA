@@ -13,7 +13,7 @@ class MissonDetailView: UIViewController {
     private lazy var totalStackView: UIStackView = {
         var hStack = UIStackView()
         hStack.translatesAutoresizingMaskIntoConstraints = false
-        hStack.axis = .horizontal
+        hStack.axis = .vertical
         hStack.spacing = 8
         hStack.distribution = .fill
         hStack.alignment = .top
@@ -22,15 +22,16 @@ class MissonDetailView: UIViewController {
     
     private lazy var bookmarkButton: UIButton = {
         var button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false 
+        button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "bookmark.circle"), for: .normal)
         button.setImage(UIImage(systemName: "bookmark.circle"), for: .selected)
-        button.tintColor = .white
+        button.tintColor = .systemBlue
         return button
     }()
     
     private lazy var imageViwe: UIImageView = {
         var view = UIImageView()
+        view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -68,6 +69,19 @@ class MissonDetailView: UIViewController {
         return label
     }()
     
+    private var viewModel: MissionDetailViewModel
+    
+    //MARK: - Initilazer
+    init(_ viewModel: MissionDetailViewModel) {
+        
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -76,6 +90,7 @@ class MissonDetailView: UIViewController {
         applayTheme()
         setText()
         bindViewModel()
+        viewModel.loadSubject.send(())
     }
     
     
@@ -97,13 +112,20 @@ class MissonDetailView: UIViewController {
             totalStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 8),
             imageViwe.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
             imageViwe.heightAnchor.constraint(equalToConstant: 250),
-            titleStackView.heightAnchor.constraint(equalToConstant: 25),
+            titleStackView.heightAnchor.constraint(equalToConstant: 30),
             dateLabel.heightAnchor.constraint(equalToConstant: 20)
+        ])
+        
+        NSLayoutConstraint.activate([
+            bookmarkButton.widthAnchor.constraint(equalToConstant: 30),
+            bookmarkButton.heightAnchor.constraint(equalTo: bookmarkButton.widthAnchor, multiplier: 1),
+            bookmarkButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
+            bookmarkButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)
         ])
     }
     
     private func applayTheme() {
-        
+        view.backgroundColor = .white
     }
     
     private func setText() {
@@ -113,7 +135,7 @@ class MissonDetailView: UIViewController {
     
     //MARK: - bind
     private func bindViewModel() {
-        
+        viewModel.
     }
     
     

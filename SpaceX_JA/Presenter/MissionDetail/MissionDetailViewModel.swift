@@ -11,9 +11,13 @@ import Resolver
 
 class MissionDetailViewModel {
     //MARK: - properties
-    @Injected private var service: MissionListRepository
+    @Injected private var service: MissionRepository
     
     private(set) var loadSubject = PassthroughSubject<Void, Never>()
+    @Published private (set) var image: String?
+    @Published private (set) var name: String?
+    @Published private (set) var description: String?
+    
 
     private var mission: Launche
     

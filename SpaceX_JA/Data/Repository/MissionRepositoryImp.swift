@@ -7,7 +7,7 @@
 
 import Foundation
 import Resolver
-class MissionListRepositoryImp: MissionListRepository {
+class MissionRepositoryImp: MissionListRepository {
 
     @Injected private var cache: MissionLocalDataSource
     @Injected private var remote: MissionRemoteDataSource
@@ -17,6 +17,11 @@ class MissionListRepositoryImp: MissionListRepository {
         return data.toDomain()
     }
 
+}
+
+
+extension MissionRepositoryImp: MissionRepository {
+    
     func fetch(key: String) async throws -> Launche {
        let data = try await cache.fetch(key: key)
         return data.toDomain()

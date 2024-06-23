@@ -21,8 +21,8 @@ class MissionListViewModel {
     
     //MARK: - Properties
     @Injected var service: MissionListRepository
-    @Published private (set) var state = CurrentValueSubject<State, Never>(.idle)
-    private(set) var loadSubject = PassthroughSubject<Void, Never>()
+    private (set) var state = CurrentValueSubject<State, Never>(.idle)
+    private (set) var loadSubject = PassthroughSubject<Void, Never>()
     private (set) var mission: LaunchesPage?
     private var cancellables = Set<AnyCancellable>()
     private var hasNextPage: Bool {

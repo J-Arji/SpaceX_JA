@@ -65,9 +65,9 @@ class MissionListView: UITableViewController {
     // MARK: - Action
     func showDetailView(input: Launche) {
         //TODO: show Detail
-        let vc = MissonDetailView()
-        self.navigationController?.pushViewController(vc, animated: true)
-        
+        var viewModel = MissionDetailViewModel(mission: input)
+        let vc = MissonDetailView(viewModel)
+        push(vc)
     }
     
 }
@@ -82,7 +82,6 @@ extension MissionListView {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MissionCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let item = docs[indexPath.row]
-        cell.set(icon: item.icon)
         cell.set(flight: item.flightNumber)
         cell.set(status: item.success ?? false)
         cell.set(description: item.details)
@@ -96,7 +95,14 @@ extension MissionListView {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? MissionCell {
+            cell.set(icon: docs[indexPath.row].icon)
+        }
         viewModel.loadMore(index: indexPath.row, lastIndex: docs.count - 1)
     }
 }
+
+
+//MARK: - Route
+extension MissionListView: NavigationProtocol { }
 
