@@ -29,7 +29,7 @@ extension Endpoint {
     public func asURLRequest() throws -> URLRequest {
         
         /// set the path and create the complete url
-        guard let url = URL(string: baseUrl.appending(path)) else { throw HTTPError.invalidURL }
+        guard let url = URL(string: baseUrl.appending(path)) else { throw DataTransferError.invalidURL }
 
         var request = URLRequest(url: url)
 

@@ -48,7 +48,7 @@ class MissionListViewModel {
                 self.state.send(mission.docs.count > 0 ?  .finished(mission.docs) : .empty)
                 
             } catch let error {
-                let message = (error as? HTTPError)?.description ?? error.localizedDescription
+                let message = (error as? DataTransferError)?.description ?? error.localizedDescription
                 state.send(.error(message))
             }
         }

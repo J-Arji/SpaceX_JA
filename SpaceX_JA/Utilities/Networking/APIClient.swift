@@ -12,7 +12,7 @@ protocol APIClient {
     //  MARK: - fetch
     ///
     /// - parameter endpoint: recive router and other config
-    /// - throws: HTTPError
+    /// - throws: DataTransferError
     /// - returns: Data
     ///
     func request(_ endpoint: Endpoint) async throws -> Data
@@ -22,26 +22,26 @@ class APIClientImp: APIClient {
     
     func request(_ endpoint: Endpoint) async throws -> Data {
         guard let request = try? endpoint.asURLRequest()
-        else { throw  HTTPError.invalidURL }
+        else { throw  DataTransferError.invalidURL }
 #if DEBUG
         print("👢", request.curlString)
 #endif
         let (data, responseTempo) = try await URLSession.shared.data(for: request, delegate: nil)
         guard let response = responseTempo as? HTTPURLResponse
-        else { throw HTTPError.noResponse }
+        else { throw DataTransferError.noResponse }
         
         switch response.statusCode {
         case 200..<300:
             return data
             
         case 400:
-            throw HTTPError.badRequest(data)
+            throw DataTransferError.badRequest(data)
             
         case 403:
-            throw HTTPError.forbidden
+            throw DataTransferError.forbidden
             
         default:
-            throw HTTPError.unexpectedStatusCode(response.statusCode)
+            throw DataTransferError.unexpectedStatusCode(response.statusCode)
         }
     }
 }
