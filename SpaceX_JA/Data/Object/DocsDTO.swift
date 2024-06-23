@@ -27,7 +27,7 @@ extension LaunchesDTO {
         let capsules : [String]?
         let payloads : [String]?
         let launchpad : String?
-        let flightNumber : Int?
+        let flightNumber : Int
         let name : String?
         let dateUTC : String?
         let dateUnix : Int?

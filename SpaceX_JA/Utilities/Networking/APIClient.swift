@@ -15,7 +15,8 @@ class APIClientImp: APIClient {
     func request(_ endpoint: Endpoint) async throws -> Data {
         guard let request = try? endpoint.asURLRequest()
         else { throw  HTTPError.invalidURL }
-        
+        debugPrint(request.curlString)
+        print("👢", request.curlString)
         let (data, responseTempo) = try await URLSession.shared.data(for: request, delegate: nil)
         guard let response = responseTempo as? HTTPURLResponse
         else { throw HTTPError.noResponse }

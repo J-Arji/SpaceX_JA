@@ -123,7 +123,7 @@ class MissionCell: UITableViewCell {
      
     
     //MARK: - Set
-    public func set(icon url: String) {
+    public func set(icon url: String?) {
         
     }
     
@@ -132,11 +132,11 @@ class MissionCell: UITableViewCell {
         statusLabel.textColor = isSuccess ? .systemGreen : .systemRed
     }
     
-    public func set(flight number: String) {
-        numberLabel.text = number
+    public func set(flight number: Int) {
+        numberLabel.text = "\(number)"
     }
     
-    public func set(description: String) {
+    public func set(description: String?) {
         descriptionLabel.text = description
     }
     

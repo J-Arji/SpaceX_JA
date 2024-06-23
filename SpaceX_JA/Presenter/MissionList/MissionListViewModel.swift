@@ -9,6 +9,11 @@ import Foundation
 import Combine
 import Resolver
 
+protocol MissionDataSource {
+    func numberOfRows() -> Int
+    func item(index: Int) -> Launche
+}
+
 class MissionListViewModel {
     enum State: Equatable {
         case idle
@@ -18,26 +23,37 @@ class MissionListViewModel {
         case error(String)
     }
     
+    //MARK: - Properties
     @Published private (set) var state: State = .idle
+    @Published private (set) var launches: [Launche] = []
     @Injected var service: MissionListRepository
     
-    func fetch(launch page: Int, limit: Int) async {
+    
+    //MARK: - fetch data
+    public func fetch(launch page: Int = 1, limit: Int = 20) async {
+        self.state = .loading
         let parameter = LaunchInput.init(limit: limit, page: page)
         do {
             let missions =  try await service.fetch(input: parameter)
-            print(missions)
+            self.launches.append(contentsOf: missions.docs)
+            self.state = missions.docs.count > 0 ?  .finished : .empty
+            
         } catch let error {
-            if let em = error as? HTTPError {
-                
-                print(em.description)
-            } else {
-                HTTPError.unknown(error.localizedDescription).description
-            }
+            let message = (error as? HTTPError)?.description ?? error.localizedDescription
+            state = .error(message)
         }
-
     }
 }
 
-extension MissionListViewModel {
+//MARK: - Data source
+extension MissionListViewModel: MissionDataSource {
+    func numberOfRows() -> Int {
+        launches.count
+    }
+    
+    func item(index: Int) -> Launche {
+        launches[index]
+    }
+    
     
 }

@@ -12,11 +12,12 @@ struct Launche: Equatable, Identifiable {
     typealias Identifier = String
     let id: Identifier
     let name: String
+    let flightNumber: Int
     let dateUTC : Date?
     let success: Bool?
     let details : String?
     var wikipediaLink: String?
-    
+    var icon: String?
 }
 
 // MARK: - Extension Launche
@@ -26,9 +27,11 @@ extension Launche {
     init(_ dto: LaunchesDTO.DocsDTO) {
         id = dto.id
         name = dto.name ?? ""
+        flightNumber = dto.flightNumber
         dateUTC = dto.staticFireDateUTC?.toDate
         success = dto.success
         details = dto.details
         wikipediaLink = dto.links?.wikipedia
+        icon = dto.links?.patch?.small
     }
 }

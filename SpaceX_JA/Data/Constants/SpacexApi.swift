@@ -26,7 +26,7 @@ enum SpacexApi {
     }
 
     private var versionURL: String {
-        return "/V5"
+        return "/v5/"
     }
 
 }
