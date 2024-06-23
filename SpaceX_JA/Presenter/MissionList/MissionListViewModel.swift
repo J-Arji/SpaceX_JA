@@ -59,7 +59,7 @@ class MissionListViewModel {
         let isLoading = (state.value != .loading || state.value != .idle)
         if index == lastIndex, hasNextPage, isLoading {
             state.send(.loading)
-                 fetch(launch: nextPage, limit: 5)
+                 fetch(launch: nextPage, limit: 50)
         }
     }
 }

@@ -91,13 +91,14 @@ class MissionCell: UITableViewCell {
     private func setupLayout() {
         self.contentView.addSubview(icon)
         self.contentView.addSubview(gradientView)
+        self.gradientView.addSubview(totalStackView)
         /// icon
         NSLayoutConstraint.activate([
             icon.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: margin),
             icon.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -margin),
             icon.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margin),
             icon.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -margin),
-            icon.heightAnchor.constraint(equalToConstant: 300)
+            icon.heightAnchor.constraint(equalToConstant: 250)
         ])
         /// gradientView
         NSLayoutConstraint.activate([

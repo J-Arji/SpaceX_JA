@@ -18,6 +18,7 @@ class MissionListView: UITableViewController {
         super.viewDidLoad()
         applayTheme()
         setupView()
+        bindViewModel()
         viewModel.loadSubject.send(())
     }
         

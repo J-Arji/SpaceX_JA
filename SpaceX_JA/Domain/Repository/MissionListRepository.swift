@@ -25,22 +25,5 @@ protocol MissionListRepository {
     ///  - throws: HTTPError
     /// - returns: Returns a persist data or not
     ///
-//    func save(value: Launche) async throws -> Bool
-//    
-//    //  MARK: - isExist
-//    ///
-//    /// - parameter key: string Id of object
-//    ///  - throws: HTTPError
-//    /// - returns: Returns a Launche Model
-//    ///
-//    func isExist(key: String) async throws -> Launche
-//    
-//    
-//    //  MARK: - remove
-//    ///
-//    /// - parameter key: string Id of object
-//    ///  - throws: HTTPError
-//    /// - returns: Returns  delete object from database or not
-//    ///
-//    func remove(key: String) async throws -> Bool
+
 }
