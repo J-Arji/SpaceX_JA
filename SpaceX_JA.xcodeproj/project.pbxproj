@@ -56,6 +56,9 @@
 		6954131B2C28519200AA46FD /* LaunchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6954131A2C28519100AA46FD /* LaunchEntity.swift */; };
 		69BFEFF32C28617700B14063 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 69BFEFF22C28617700B14063 /* RealmSwift */; };
 		69BFEFF42C28617700B14063 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 69BFEFF22C28617700B14063 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		69BFEFF62C28972F00B14063 /* MissonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BFEFF52C28972F00B14063 /* MissonDetailView.swift */; };
+		69BFEFF82C28974100B14063 /* MissionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BFEFF72C28974100B14063 /* MissionDetailViewModel.swift */; };
+		69BFEFFA2C28A12800B14063 /* UIViewController + Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BFEFF92C28A12800B14063 /* UIViewController + Present.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -118,6 +121,9 @@
 		695413102C28290D00AA46FD /* UIimageView+kf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+kf.swift"; sourceTree = "<group>"; };
 		695413132C28480200AA46FD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		6954131A2C28519100AA46FD /* LaunchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEntity.swift; sourceTree = "<group>"; };
+		69BFEFF52C28972F00B14063 /* MissonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissonDetailView.swift; sourceTree = "<group>"; };
+		69BFEFF72C28974100B14063 /* MissionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewModel.swift; sourceTree = "<group>"; };
+		69BFEFF92C28A12800B14063 /* UIViewController + Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Present.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,6 +238,8 @@
 		695412B32C258A9F00AA46FD /* MissionDetail */ = {
 			isa = PBXGroup;
 			children = (
+				69BFEFF52C28972F00B14063 /* MissonDetailView.swift */,
+				69BFEFF72C28974100B14063 /* MissionDetailViewModel.swift */,
 			);
 			path = MissionDetail;
 			sourceTree = "<group>";
@@ -323,6 +331,7 @@
 			children = (
 				695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */,
 				695413102C28290D00AA46FD /* UIimageView+kf.swift */,
+				69BFEFF92C28A12800B14063 /* UIViewController + Present.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -454,6 +463,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BFEFFA2C28A12800B14063 /* UIViewController + Present.swift in Sources */,
 				695412C22C259A0700AA46FD /* MissionListRepository.swift in Sources */,
 				695412CE2C25AE7E00AA46FD /* FairingsDTO.swift in Sources */,
 				695412D22C25B04500AA46FD /* FailuresDTO.swift in Sources */,
@@ -471,6 +481,7 @@
 				695412C72C259E5A00AA46FD /* LaunchesDTO.swift in Sources */,
 				695412A52C2576FD00AA46FD /* EnvironmentConstants.swift in Sources */,
 				695412E62C26176100AA46FD /* Sort.swift in Sources */,
+				69BFEFF82C28974100B14063 /* MissionDetailViewModel.swift in Sources */,
 				695412FC2C27622C00AA46FD /* ReusableView+Extention.swift in Sources */,
 				695412FE2C2765D400AA46FD /* AppFlowDelegate.swift in Sources */,
 				695413022C2768DE00AA46FD /* SplashView.swift in Sources */,
@@ -478,6 +489,7 @@
 				6954127B2C2479B800AA46FD /* SceneDelegate.swift in Sources */,
 				695412D82C25B35600AA46FD /* LaunchesPage.swift in Sources */,
 				695412CA2C25A40500AA46FD /* Launches.swift in Sources */,
+				69BFEFF62C28972F00B14063 /* MissonDetailView.swift in Sources */,
 				695412CC2C25AE3D00AA46FD /* DocsDTO.swift in Sources */,
 				695412D62C25B19C00AA46FD /* CoresDTO.swift in Sources */,
 				6954130C2C27FB5E00AA46FD /* URLRequest+CURL.swift in Sources */,

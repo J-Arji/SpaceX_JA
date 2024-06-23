@@ -65,6 +65,9 @@ class MissionListView: UITableViewController {
     // MARK: - Action
     func showDetailView(input: Launche) {
         //TODO: show Detail
+        let vc = MissonDetailView()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 }
