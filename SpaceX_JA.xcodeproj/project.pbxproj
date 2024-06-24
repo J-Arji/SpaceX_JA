@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6913433F2C28BF23002EF536 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6913433E2C28BF23002EF536 /* LoadState.swift */; };
+		691343412C28BFD1002EF536 /* UIView + StatefulView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 691343402C28BFD1002EF536 /* UIView + StatefulView.swift */; };
 		695412792C2479B800AA46FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412782C2479B800AA46FD /* AppDelegate.swift */; };
 		6954127B2C2479B800AA46FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6954127A2C2479B800AA46FD /* SceneDelegate.swift */; };
 		695412822C2479BA00AA46FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 695412812C2479BA00AA46FD /* Assets.xcassets */; };
@@ -15,7 +17,6 @@
 		6954129C2C24B1E800AA46FD /* DataTransferEroor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6954129B2C24B1E800AA46FD /* DataTransferEroor.swift */; };
 		6954129F2C24B75800AA46FD /* Dictionary+Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6954129E2C24B75800AA46FD /* Dictionary+Serialization.swift */; };
 		695412A22C25739100AA46FD /* SpacexApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412A12C25739100AA46FD /* SpacexApi.swift */; };
-		695412A52C2576FD00AA46FD /* EnvironmentConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412A42C2576FD00AA46FD /* EnvironmentConstants.swift */; };
 		695412AC2C2585FC00AA46FD /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412AB2C2585FC00AA46FD /* Network.swift */; };
 		695412BB2C258DA100AA46FD /* MissionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412BA2C258DA100AA46FD /* MissionListView.swift */; };
 		695412BD2C258DB400AA46FD /* MissionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412BC2C258DB400AA46FD /* MissionListViewModel.swift */; };
@@ -32,7 +33,7 @@
 		695412DA2C25F8CE00AA46FD /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412D92C25F8CE00AA46FD /* Date+String.swift */; };
 		695412DC2C25F8E100AA46FD /* String+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412DB2C25F8E100AA46FD /* String+Date.swift */; };
 		695412DD2C25FC8600AA46FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 695412832C2479BA00AA46FD /* LaunchScreen.storyboard */; };
-		695412E02C25FD5E00AA46FD /* MissionListRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412DF2C25FD5E00AA46FD /* MissionListRepositoryImp.swift */; };
+		695412E02C25FD5E00AA46FD /* MissionRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412DF2C25FD5E00AA46FD /* MissionRepositoryImp.swift */; };
 		695412E22C2613D800AA46FD /* Codable+Dic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412E12C2613D800AA46FD /* Codable+Dic.swift */; };
 		695412E42C26162500AA46FD /* LaunchInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412E32C26162500AA46FD /* LaunchInput.swift */; };
 		695412E62C26176100AA46FD /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412E52C26176100AA46FD /* Sort.swift */; };
@@ -43,7 +44,6 @@
 		695412F22C26251000AA46FD /* MissionLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F12C26251000AA46FD /* MissionLocalDataSource.swift */; };
 		695412F42C26296500AA46FD /* MissionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F32C26296500AA46FD /* MissionRemoteDataSource.swift */; };
 		695412F72C2754E400AA46FD /* MissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F62C2754E400AA46FD /* MissionCell.swift */; };
-		695412F92C27585E00AA46FD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F82C27585E00AA46FD /* GradientView.swift */; };
 		695412FC2C27622C00AA46FD /* ReusableView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */; };
 		695412FE2C2765D400AA46FD /* AppFlowDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412FD2C2765D400AA46FD /* AppFlowDelegate.swift */; };
 		695413002C27675D00AA46FD /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412FF2C27675D00AA46FD /* NetworkMonitor.swift */; };
@@ -56,6 +56,10 @@
 		6954131B2C28519200AA46FD /* LaunchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6954131A2C28519100AA46FD /* LaunchEntity.swift */; };
 		69BFEFF32C28617700B14063 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 69BFEFF22C28617700B14063 /* RealmSwift */; };
 		69BFEFF42C28617700B14063 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 69BFEFF22C28617700B14063 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		69BFEFF62C28972F00B14063 /* MissionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BFEFF52C28972F00B14063 /* MissionDetailView.swift */; };
+		69BFEFF82C28974100B14063 /* MissionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BFEFF72C28974100B14063 /* MissionDetailViewModel.swift */; };
+		69BFEFFA2C28A12800B14063 /* UIViewController + Present.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BFEFF92C28A12800B14063 /* UIViewController + Present.swift */; };
+		69BFEFFC2C28A8AE00B14063 /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BFEFFB2C28A8AE00B14063 /* MissionRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,6 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6913433E2C28BF23002EF536 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		691343402C28BFD1002EF536 /* UIView + StatefulView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + StatefulView.swift"; sourceTree = "<group>"; };
 		695412752C2479B800AA46FD /* SpaceX_JA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX_JA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		695412782C2479B800AA46FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6954127A2C2479B800AA46FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +90,6 @@
 		6954129B2C24B1E800AA46FD /* DataTransferEroor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferEroor.swift; sourceTree = "<group>"; };
 		6954129E2C24B75800AA46FD /* Dictionary+Serialization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Serialization.swift"; sourceTree = "<group>"; };
 		695412A12C25739100AA46FD /* SpacexApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacexApi.swift; sourceTree = "<group>"; };
-		695412A42C2576FD00AA46FD /* EnvironmentConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConstants.swift; sourceTree = "<group>"; };
 		695412AB2C2585FC00AA46FD /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		695412BA2C258DA100AA46FD /* MissionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListView.swift; sourceTree = "<group>"; };
 		695412BC2C258DB400AA46FD /* MissionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListViewModel.swift; sourceTree = "<group>"; };
@@ -100,7 +105,7 @@
 		695412D72C25B35600AA46FD /* LaunchesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesPage.swift; sourceTree = "<group>"; };
 		695412D92C25F8CE00AA46FD /* Date+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
 		695412DB2C25F8E100AA46FD /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
-		695412DF2C25FD5E00AA46FD /* MissionListRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionListRepositoryImp.swift; sourceTree = "<group>"; };
+		695412DF2C25FD5E00AA46FD /* MissionRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepositoryImp.swift; sourceTree = "<group>"; };
 		695412E12C2613D800AA46FD /* Codable+Dic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+Dic.swift"; sourceTree = "<group>"; };
 		695412E32C26162500AA46FD /* LaunchInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInput.swift; sourceTree = "<group>"; };
 		695412E52C26176100AA46FD /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
@@ -108,7 +113,6 @@
 		695412F12C26251000AA46FD /* MissionLocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionLocalDataSource.swift; sourceTree = "<group>"; };
 		695412F32C26296500AA46FD /* MissionRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRemoteDataSource.swift; sourceTree = "<group>"; };
 		695412F62C2754E400AA46FD /* MissionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionCell.swift; sourceTree = "<group>"; };
-		695412F82C27585E00AA46FD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableView+Extention.swift"; sourceTree = "<group>"; };
 		695412FD2C2765D400AA46FD /* AppFlowDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowDelegate.swift; sourceTree = "<group>"; };
 		695412FF2C27675D00AA46FD /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
@@ -118,6 +122,10 @@
 		695413102C28290D00AA46FD /* UIimageView+kf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimageView+kf.swift"; sourceTree = "<group>"; };
 		695413132C28480200AA46FD /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		6954131A2C28519100AA46FD /* LaunchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchEntity.swift; sourceTree = "<group>"; };
+		69BFEFF52C28972F00B14063 /* MissionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailView.swift; sourceTree = "<group>"; };
+		69BFEFF72C28974100B14063 /* MissionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDetailViewModel.swift; sourceTree = "<group>"; };
+		69BFEFF92C28A12800B14063 /* UIViewController + Present.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Present.swift"; sourceTree = "<group>"; };
+		69BFEFFB2C28A8AE00B14063 /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6913433D2C28BEE7002EF536 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				691343422C28BFD5002EF536 /* LoadState */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		691343422C28BFD5002EF536 /* LoadState */ = {
+			isa = PBXGroup;
+			children = (
+				691343402C28BFD1002EF536 /* UIView + StatefulView.swift */,
+				6913433E2C28BF23002EF536 /* LoadState.swift */,
+			);
+			path = LoadState;
+			sourceTree = "<group>";
+		};
 		6954126C2C2479B800AA46FD = {
 			isa = PBXGroup;
 			children = (
@@ -212,7 +237,6 @@
 		695412A72C25824500AA46FD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				695412A42C2576FD00AA46FD /* EnvironmentConstants.swift */,
 				695413122C2847C200AA46FD /* LocalStorage */,
 				695412912C24A9FF00AA46FD /* Networking */,
 			);
@@ -224,7 +248,7 @@
 			children = (
 				695412BA2C258DA100AA46FD /* MissionListView.swift */,
 				695412BC2C258DB400AA46FD /* MissionListViewModel.swift */,
-				695412F52C2754CA00AA46FD /* View */,
+				695412F52C2754CA00AA46FD /* Cell */,
 			);
 			path = MissionList;
 			sourceTree = "<group>";
@@ -232,6 +256,8 @@
 		695412B32C258A9F00AA46FD /* MissionDetail */ = {
 			isa = PBXGroup;
 			children = (
+				69BFEFF52C28972F00B14063 /* MissionDetailView.swift */,
+				69BFEFF72C28974100B14063 /* MissionDetailViewModel.swift */,
 			);
 			path = MissionDetail;
 			sourceTree = "<group>";
@@ -239,6 +265,7 @@
 		695412B42C258AB900AA46FD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				6913433D2C28BEE7002EF536 /* Helper */,
 				695413032C2768E100AA46FD /* SplashView */,
 				695412B22C258A7900AA46FD /* MissionList */,
 				695412B32C258A9F00AA46FD /* MissionDetail */,
@@ -272,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				695412C12C259A0700AA46FD /* MissionListRepository.swift */,
+				69BFEFFB2C28A8AE00B14063 /* MissionRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -302,20 +330,19 @@
 		695412DE2C25FD4D00AA46FD /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				695412DF2C25FD5E00AA46FD /* MissionListRepositoryImp.swift */,
+				695412DF2C25FD5E00AA46FD /* MissionRepositoryImp.swift */,
 				695412F12C26251000AA46FD /* MissionLocalDataSource.swift */,
 				695412F32C26296500AA46FD /* MissionRemoteDataSource.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		695412F52C2754CA00AA46FD /* View */ = {
+		695412F52C2754CA00AA46FD /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				695412F62C2754E400AA46FD /* MissionCell.swift */,
-				695412F82C27585E00AA46FD /* GradientView.swift */,
 			);
-			path = View;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		695412FA2C27622300AA46FD /* Extension */ = {
@@ -323,6 +350,7 @@
 			children = (
 				695412FB2C27622C00AA46FD /* ReusableView+Extention.swift */,
 				695413102C28290D00AA46FD /* UIimageView+kf.swift */,
+				69BFEFF92C28A12800B14063 /* UIViewController + Present.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -454,14 +482,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BFEFFA2C28A12800B14063 /* UIViewController + Present.swift in Sources */,
 				695412C22C259A0700AA46FD /* MissionListRepository.swift in Sources */,
 				695412CE2C25AE7E00AA46FD /* FairingsDTO.swift in Sources */,
 				695412D22C25B04500AA46FD /* FailuresDTO.swift in Sources */,
 				695412792C2479B800AA46FD /* AppDelegate.swift in Sources */,
 				695412AC2C2585FC00AA46FD /* Network.swift in Sources */,
+				6913433F2C28BF23002EF536 /* LoadState.swift in Sources */,
 				695412F72C2754E400AA46FD /* MissionCell.swift in Sources */,
 				695412E42C26162500AA46FD /* LaunchInput.swift in Sources */,
-				695412E02C25FD5E00AA46FD /* MissionListRepositoryImp.swift in Sources */,
+				695412E02C25FD5E00AA46FD /* MissionRepositoryImp.swift in Sources */,
 				695412A22C25739100AA46FD /* SpacexApi.swift in Sources */,
 				695412F22C26251000AA46FD /* MissionLocalDataSource.swift in Sources */,
 				6954131B2C28519200AA46FD /* LaunchEntity.swift in Sources */,
@@ -469,8 +499,9 @@
 				695412EF2C261C3E00AA46FD /* App+Injection.swift in Sources */,
 				695413052C27865E00AA46FD /* Data+Decode.swift in Sources */,
 				695412C72C259E5A00AA46FD /* LaunchesDTO.swift in Sources */,
-				695412A52C2576FD00AA46FD /* EnvironmentConstants.swift in Sources */,
 				695412E62C26176100AA46FD /* Sort.swift in Sources */,
+				69BFEFF82C28974100B14063 /* MissionDetailViewModel.swift in Sources */,
+				69BFEFFC2C28A8AE00B14063 /* MissionRepository.swift in Sources */,
 				695412FC2C27622C00AA46FD /* ReusableView+Extention.swift in Sources */,
 				695412FE2C2765D400AA46FD /* AppFlowDelegate.swift in Sources */,
 				695413022C2768DE00AA46FD /* SplashView.swift in Sources */,
@@ -478,11 +509,11 @@
 				6954127B2C2479B800AA46FD /* SceneDelegate.swift in Sources */,
 				695412D82C25B35600AA46FD /* LaunchesPage.swift in Sources */,
 				695412CA2C25A40500AA46FD /* Launches.swift in Sources */,
+				69BFEFF62C28972F00B14063 /* MissionDetailView.swift in Sources */,
 				695412CC2C25AE3D00AA46FD /* DocsDTO.swift in Sources */,
 				695412D62C25B19C00AA46FD /* CoresDTO.swift in Sources */,
 				6954130C2C27FB5E00AA46FD /* URLRequest+CURL.swift in Sources */,
 				6954129C2C24B1E800AA46FD /* DataTransferEroor.swift in Sources */,
-				695412F92C27585E00AA46FD /* GradientView.swift in Sources */,
 				695412D02C25AEA500AA46FD /* LinksDTO.swift in Sources */,
 				695412DC2C25F8E100AA46FD /* String+Date.swift in Sources */,
 				695413002C27675D00AA46FD /* NetworkMonitor.swift in Sources */,
@@ -495,6 +526,7 @@
 				695412952C24AAF400AA46FD /* APIClient.swift in Sources */,
 				695412982C24ACBE00AA46FD /* Endpoint.swift in Sources */,
 				695413142C28480200AA46FD /* RealmManager.swift in Sources */,
+				691343412C28BFD1002EF536 /* UIView + StatefulView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
