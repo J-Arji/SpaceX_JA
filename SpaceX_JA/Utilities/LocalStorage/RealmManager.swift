@@ -8,30 +8,32 @@
 import Foundation
 import RealmSwift
 
-class RealmManager {
-    static let shared = RealmManager()
+actor RealmManager {
+    // An implicitly-unwrapped optional is used here to let us pass `self` to
+    // `Realm(actor:)` within `init`
+    var realm: Realm!
+    init() async throws {
+        realm = try await Realm(actor: self)
+    }
     
-    let version: UInt64 = 156
-    private func insensitiveDataConfiguration() -> Realm.Configuration {
-        var config = Realm.Configuration()
-        config.schemaVersion = version
-        config.migrationBlock = { migration, oldSchemaVersion in
+    func saveMission(object: LaunchEntity) async throws {
+        try await realm.asyncWrite {
+            realm.add(object, update: .modified)
         }
-        return config
     }
     
-    public func realm()  async throws  -> Realm {
-        return try await Realm(configuration: insensitiveDataConfiguration())
+    func getMissionr(forMission id: String) -> Bool {
+        if realm.objects(LaunchEntity.self).first(where: {$0.id.stringValue == id })  != nil{
+            return true
+        }
+        return false
     }
     
-}
-
-extension Realm {
-  public func safeWrite(_ block: (() throws -> Void)) throws {
-    if isInWriteTransaction {
-      try block()
-    } else {
-      try write(block)
+    func deleteMission(id: ObjectId) async throws {
+        try await realm.asyncWrite {
+            if let todoToDelete = realm.object(ofType: LaunchEntity.self, forPrimaryKey: id) {
+                realm.delete(todoToDelete)
+            }
+        }
     }
-  }
 }
