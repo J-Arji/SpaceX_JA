@@ -19,7 +19,7 @@ class MissionListView: UITableViewController {
         applayTheme()
         setupView()
         bindViewModel()
-        viewModel.loadSubject.send(())
+        viewModel.fetch()
     }
         
     private func setupView() {
@@ -35,25 +35,27 @@ class MissionListView: UITableViewController {
     private func updateState(_ state: MissionListViewModel.State) {
         switch state {
         case .idle, .loading:
-            //TODO: show Progress view
-            break;
+            self.tableView.loadState.startAnimating()
+            
         case .empty:
             //TODO: show empty state
-            break;
+            self.tableView.loadState.stopAnimating()
             
         case let .finished(items):
             docs.append(contentsOf: items)
             tableView.reloadData()
+            self.tableView.loadState.stopAnimating()
             
-        case let .error(messge):
-            //TODO: show Error message
-            break;
+        case let .error(message):
+            self.tableView.loadState.stopAnimating()
+            showAlert(message: message)
         
         }
     }
     
     private func bindViewModel() {
         viewModel.state
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] state in
                 self?.updateState(state)
@@ -65,6 +67,9 @@ class MissionListView: UITableViewController {
     // MARK: - Action
     func showDetailView(input: Launche) {
         //TODO: show Detail
+        let viewModel = MissionDetailViewModel(mission: input)
+        let vc = MissionDetailView(viewModel)
+        push(vc)
     }
     
 }
@@ -79,7 +84,6 @@ extension MissionListView {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MissionCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         let item = docs[indexPath.row]
-        cell.set(icon: item.icon)
         cell.set(flight: item.flightNumber)
         cell.set(status: item.success ?? false)
         cell.set(description: item.details)
@@ -93,7 +97,27 @@ extension MissionListView {
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let cell = cell as? MissionCell {
+            cell.set(icon: docs[indexPath.row].icon)
+        }
         viewModel.loadMore(index: indexPath.row, lastIndex: docs.count - 1)
     }
 }
 
+
+//MARK: - Route
+extension MissionListView: NavigationProtocol { }
+
+
+//MARK: - show Alert
+extension MissionListView {
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "message Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "retry", style: .default, handler: { [weak self] action in
+            self?.viewModel.fetch()
+       
+        }))
+        present(alert)
+    }
+}

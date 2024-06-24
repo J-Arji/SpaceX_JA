@@ -30,6 +30,7 @@ class MissionCell: UITableViewCell {
     private lazy var descriptionLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .left
+        label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 3
         return label
     }()

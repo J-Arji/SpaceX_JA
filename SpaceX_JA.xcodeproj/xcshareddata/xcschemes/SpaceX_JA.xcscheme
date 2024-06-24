@@ -50,13 +50,6 @@
             ReferencedContainer = "container:SpaceX_JA.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "SPACEX_SERVER_URL"
-            value = "https://api.spacexdata.com"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

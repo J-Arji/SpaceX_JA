@@ -22,7 +22,7 @@ enum SpacexApi {
     }
     
     private var baseUrl: String {
-        return EnvironmentConstants(rawValue: "SPACEX_SERVER_URL").value
+        return "https://api.spacexdata.com"
     }
 
     private var versionURL: String {
