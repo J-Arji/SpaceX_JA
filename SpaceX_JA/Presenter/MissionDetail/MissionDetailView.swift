@@ -94,12 +94,6 @@ class MissionDetailView: UIViewController {
         setupView()
         bindViewModel()
         viewModel.updateUI()
-//        let myButton = UIButton(frame : CGRectMake (10, 300, 100, 40))
-//        myButton.setTitle("My Button", for : .normal)
-//        myButton.setImage(UIImage(named : "unselectedImage"), for: .normal)
-//        myButton.setImage(UIImage(named : "selectedImage"), for: .selected)
-//        myButton.addTarget(self, action: #selector(myButtonTapped), forControlEvents: .touchUpInside)
-//        self.view.addSubview(myButton)
     }
     
     
@@ -151,10 +145,24 @@ class MissionDetailView: UIViewController {
         bookmarkButton.setImage(UIImage(systemName: "book.fill"), for: .selected)
     }
     
+    private func updateBookmarkState(_ state: MissionDetailViewModel.State) {
+        switch state {
+        case .loading:
+            bookmarkButton.loadState.startAnimating()
+            
+        case .error(_):
+            bookmarkButton.loadState.stopAnimating()
+            
+        case .finished(let isAdded):
+            bookmarkButton.loadState.stopAnimating()
+            bookmarkButton.isSelected =  isAdded
+        }
+    }
     
     //MARK: - bind
     private func bindViewModel() {
         viewModel.$name
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] name in
                 self?.titleLabel.text = name
@@ -162,6 +170,7 @@ class MissionDetailView: UIViewController {
             .store(in: &cancellables)
         
         viewModel.$imageUrl
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] path in
                 self?.imageViwe.setRemoteImage(with: path)
@@ -169,6 +178,7 @@ class MissionDetailView: UIViewController {
             .store(in: &cancellables)
         
         viewModel.$isMarked
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] isSelected in
                 self?.bookmarkButton.isSelected = isSelected
@@ -181,6 +191,7 @@ class MissionDetailView: UIViewController {
           .store(in: &cancellables)
         
         viewModel.$detail
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] detail in
                 self?.descriptionLabel.text = detail
@@ -189,9 +200,18 @@ class MissionDetailView: UIViewController {
             .store(in: &cancellables)
         
         viewModel.$name
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] name in
                 self?.titleLabel.text = name
+            }
+            .store(in: &cancellables)
+        
+        viewModel.state
+            .eraseToAnyPublisher()
+            .receive(on: RunLoop.main)
+            .sink { [weak self] state in
+                self?.updateBookmarkState(state)
             }
             .store(in: &cancellables)
     }
@@ -199,10 +219,11 @@ class MissionDetailView: UIViewController {
     
     //MARK: - Action
     @objc private func didTapBookmark() {
-        bookmarkButton.isSelected =  !bookmarkButton.isSelected
+        viewModel.didtapBookMark(isAdded: bookmarkButton.isSelected)
     }
     
     @objc private func didTapMoreInfo() {
+        bookmarkButton.loadState.stopAnimating()
         guard let link = viewModel.wikiLink else { return }
         openURL(with: link, completion: nil)
     }

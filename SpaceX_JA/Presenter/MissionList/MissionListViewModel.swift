@@ -22,21 +22,12 @@ class MissionListViewModel {
     //MARK: - Properties
     @Injected var service: MissionListRepository
     private (set) var state = CurrentValueSubject<State, Never>(.idle)
-    private (set) var loadSubject = PassthroughSubject<Void, Never>()
     private (set) var mission: LaunchesPage?
-    private var cancellables = Set<AnyCancellable>()
     private var hasNextPage: Bool {
         return mission?.hasNextPage ?? false
     }
     
-    init() {
-        loadSubject
-            .receive(on: RunLoop.main)
-            .sink { [weak self] in
-                self?.fetch()
-            }
-            .store(in: &cancellables)
-    }
+
     
     //MARK: - fetch data
     public func fetch(launch page: Int = 1, limit: Int = 20)  {
@@ -57,10 +48,11 @@ class MissionListViewModel {
     public func loadMore(index: Int, lastIndex: Int) {
         guard let nextPage = mission?.nextPage else { return }
         let isLoading = (state.value != .loading || state.value != .idle)
-        if index == lastIndex, hasNextPage, isLoading {
-            state.send(.loading)
-            fetch(launch: nextPage, limit: 50)
-        }
+        guard index == lastIndex, isLoading, hasNextPage else { return }
+
+        state.send(.loading)
+        fetch(launch: nextPage, limit: 50)
+        
     }
 }
 

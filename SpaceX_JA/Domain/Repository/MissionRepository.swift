@@ -11,14 +11,14 @@ import Foundation
 /// This is repository model that it have to implement when we want  have fetch data or save model
 protocol MissionRepository {
     
-    //  MARK: - save
+    //  MARK: - isExist
     ///
-    /// - parameter value: object
-    ///  - throws: DataTransferError
-    /// - returns: Returns a persist data or not
+    /// - parameter key: id object
+    /// - throws: DataTransferError
+    /// - returns: Returns a LaunchEntity
     ///
-    func fetch(key: String) async throws -> Launche
-    
+    func isExist(key: String) async throws -> Bool
+
     //  MARK: - save
     ///
     /// - parameter object: The object to be added to the Realm.
@@ -26,7 +26,7 @@ protocol MissionRepository {
     /// - returns: Only updates the properties of the existing object that have different
     ///
     func save(object: Launche) async throws
-    
+
     //  MARK: - remove
     ///
     /// - parameter key: The key to be remove to the Realm.
@@ -36,4 +36,6 @@ protocol MissionRepository {
     func remove(key: String) async throws
 
 }
+
+
 

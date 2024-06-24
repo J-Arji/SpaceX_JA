@@ -19,7 +19,7 @@ class MissionListView: UITableViewController {
         applayTheme()
         setupView()
         bindViewModel()
-        viewModel.loadSubject.send(())
+        viewModel.fetch()
     }
         
     private func setupView() {
@@ -35,25 +35,27 @@ class MissionListView: UITableViewController {
     private func updateState(_ state: MissionListViewModel.State) {
         switch state {
         case .idle, .loading:
-            //TODO: show Progress view
-            break;
+            self.tableView.loadState.startAnimating()
+            
         case .empty:
             //TODO: show empty state
-            break;
+            self.tableView.loadState.stopAnimating()
             
         case let .finished(items):
             docs.append(contentsOf: items)
             tableView.reloadData()
+            self.tableView.loadState.stopAnimating()
             
-        case let .error(_):
-            //TODO: show Error message
-            break;
+        case let .error(message):
+            self.tableView.loadState.stopAnimating()
+            showAlert(message: message)
         
         }
     }
     
     private func bindViewModel() {
         viewModel.state
+            .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] state in
                 self?.updateState(state)
@@ -106,3 +108,16 @@ extension MissionListView {
 //MARK: - Route
 extension MissionListView: NavigationProtocol { }
 
+
+//MARK: - show Alert
+extension MissionListView {
+    private func showAlert(message: String) {
+        let alert = UIAlertController(title: "message Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "retry", style: .default, handler: { [weak self] action in
+            self?.viewModel.fetch()
+       
+        }))
+        present(alert)
+    }
+}

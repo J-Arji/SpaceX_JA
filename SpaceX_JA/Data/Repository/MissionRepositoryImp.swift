@@ -7,6 +7,7 @@
 
 import Foundation
 import Resolver
+
 class MissionRepositoryImp: MissionListRepository {
 
     @Injected private var cache: MissionLocalDataSource
@@ -21,11 +22,10 @@ class MissionRepositoryImp: MissionListRepository {
 
 
 extension MissionRepositoryImp: MissionRepository {
-    
-    func fetch(key: String) async throws -> Launche {
-       let data = try await cache.fetch(key: key)
-        return data.toDomain()
+    func isExist(key: String) async throws -> Bool {
+        try await cache.isExist(key: key)
     }
+    
     
     func save(object: Launche) async throws {
        try await cache.save(object: object.toEntitiy())
@@ -35,3 +35,4 @@ extension MissionRepositoryImp: MissionRepository {
         try await cache.remove(key: key)
     }
 }
+
