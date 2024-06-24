@@ -9,16 +9,16 @@ import Foundation
 import RealmSwift
 
 // MARK: - MissionLocalDataSource
-/// This is MissionLocalDataSource  that it have to implement when we want  have fetch, delete and save data 
+/// This is MissionLocalDataSource  that it have to implement when we want  have fetch, delete and save data
 
 protocol MissionLocalDataSource {
-    //  MARK: - fetch
+    //  MARK: - isExist
     ///
     /// - parameter key: id object
     /// - throws: DataTransferError
     /// - returns: Returns a LaunchEntity
     ///
-    func fetch(key: String) async throws -> LaunchEntity
+    func isExist(key: String) async throws -> Bool
     
     //  MARK: - save
     ///
@@ -38,31 +38,18 @@ protocol MissionLocalDataSource {
 }
 
 class MissionLocalDataSourceImp: MissionLocalDataSource {
-    func fetch(key: String) async throws -> LaunchEntity {
-        let realm = try await RealmManager.shared.realm()
-        guard let object = realm.object(ofType: LaunchEntity.self, forPrimaryKey: key) else {
-            throw DataTransferError.unknown("")
-        }
-        return object
+    func isExist(key: String) async throws -> Bool {
+        try await RealmManager().getMissionr(forMission: key)
     }
     
     
     func save(object: LaunchEntity) async throws {
-        let realm = try await Realm()
-        try await realm.asyncWrite {
-            realm.add(object, update: .modified)
-        }
+        try await RealmManager().saveMission(object: object)
     }
     
     func remove(key: String) async throws {
-        let realm = try await RealmManager.shared.realm()
-        guard let object = realm.object(ofType: LaunchEntity.self, forPrimaryKey: key) else {
-            throw DataTransferError.unknown("")
-        }
-        
-        try await realm.asyncWrite {
-            realm.delete(object)
-        }
+        try await RealmManager().deleteTodo(id: ObjectId(string: key))
     }
 
 }
+
