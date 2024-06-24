@@ -48,7 +48,7 @@ class MissionLocalDataSourceImp: MissionLocalDataSource {
     }
     
     func remove(key: String) async throws {
-        try await RealmManager().deleteTodo(id: ObjectId(string: key))
+        try await RealmManager().deleteMission(id: ObjectId(string: key))
     }
 
 }
