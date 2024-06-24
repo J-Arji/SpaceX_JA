@@ -31,7 +31,6 @@ class MissionDetailView: UIViewController {
     
     private lazy var imageViwe: UIImageView = {
         var view = UIImageView()
-        view.backgroundColor = .red
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
