@@ -10,7 +10,6 @@ import Combine
 import Resolver
 
 class MissionDetailViewModel {
-    
     enum State: Equatable {
         case loading
         case error(String)
@@ -91,3 +90,23 @@ class MissionDetailViewModel {
     }
 }
 
+
+
+extension MissionDetailViewModel {
+    enum Constants {
+        enum Size {
+            static let leftStackWidth = 50.0
+            static let imageViweHeight = 250.0
+            static let dateLabelHeigh = 20.0
+            static let titleStackViewHeight = 30.0
+            static let bookmarkButtonWidth = 30.0
+            static let space = 8.0
+            static let multiplier = 1.0
+            static let padding = 8.0
+            static let bookmarkTopPadding = 10.0
+        }
+        enum Int {
+            static let descriptionNumberLine = 1
+        }
+    }
+}

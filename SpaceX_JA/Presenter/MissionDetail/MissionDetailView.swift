@@ -16,7 +16,7 @@ class MissionDetailView: UIViewController {
         var vStack = UIStackView()
         vStack.translatesAutoresizingMaskIntoConstraints = false
         vStack.axis = .vertical
-        vStack.spacing = 8
+        vStack.spacing = MissionDetailViewModel.Constants.Size.space
         vStack.distribution = .fill
         vStack.alignment = .top
         return vStack
@@ -25,7 +25,7 @@ class MissionDetailView: UIViewController {
     private lazy var bookmarkButton: UIButton = {
         var button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .systemBlue
+        button.tintColor = .Design.Primary.buttonTint
         return button
     }()
     
@@ -51,8 +51,8 @@ class MissionDetailView: UIViewController {
     
     private lazy var moreInfoButton: UIButton = {
         var button = UIButton()
-        button.setImage(UIImage(systemName: "info.circle"), for: .normal)
-        button.tintColor = .systemBlue
+        button.setImage( .Design.Button.info, for: .normal)
+        button.tintColor = .Design.Primary.buttonTint
         return button
     }()
     
@@ -60,13 +60,14 @@ class MissionDetailView: UIViewController {
         var label = UILabel()
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .justified
-        label.numberOfLines = 0
+        label.numberOfLines = MissionDetailViewModel.Constants.Int.descriptionNumberLine
         return label
     }()
     
     private lazy var dateLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
         return label
     }()
     
@@ -106,42 +107,41 @@ class MissionDetailView: UIViewController {
         titleStackView.addArrangedSubview(titleLabel)
         titleStackView.addArrangedSubview(moreInfoButton)
         view.addSubview(bookmarkButton)
-        
+        let padding = MissionDetailViewModel.Constants.Size.padding
         NSLayoutConstraint.activate([
-            totalStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            totalStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            totalStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            totalStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
+            totalStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
+            totalStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
             
-            imageViwe.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
-            imageViwe.heightAnchor.constraint(equalToConstant: 250),
+            imageViwe.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            imageViwe.heightAnchor.constraint(equalToConstant: MissionDetailViewModel.Constants.Size.imageViweHeight),
             
-            titleStackView.heightAnchor.constraint(equalToConstant: 30),
-            titleStackView.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
-            
-            dateLabel.heightAnchor.constraint(equalToConstant: 20)
+            titleStackView.heightAnchor.constraint(equalToConstant:  MissionDetailViewModel.Constants.Size.titleStackViewHeight),
+            titleStackView.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            dateLabel.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            dateLabel.heightAnchor.constraint(equalToConstant: MissionDetailViewModel.Constants.Size.dateLabelHeigh)
         ])
         
         NSLayoutConstraint.activate([
-            bookmarkButton.widthAnchor.constraint(equalToConstant: 30),
-            bookmarkButton.heightAnchor.constraint(equalTo: bookmarkButton.widthAnchor, multiplier: 1),
-            bookmarkButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            bookmarkButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)
+            bookmarkButton.widthAnchor.constraint(equalToConstant:  MissionDetailViewModel.Constants.Size.bookmarkButtonWidth),
+            bookmarkButton.heightAnchor.constraint(equalTo: bookmarkButton.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            bookmarkButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
+            bookmarkButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: MissionDetailViewModel.Constants.Size.bookmarkTopPadding)
         ])
     }
     
     private func applayTheme() {
-        view.backgroundColor = .white
-        titleLabel.font = .systemFont(ofSize: 15, weight: .heavy)
-        descriptionLabel.font = .systemFont(ofSize: 12, weight: .medium)
-        dateLabel.font = .systemFont(ofSize: 11, weight: .medium)
+        view.backgroundColor = .Design.Primary.background
+        titleLabel.font = .Design.title
+        descriptionLabel.font = .Design.Body
+        dateLabel.font = .Design.caption
     }
     
     private func setupView() {
         moreInfoButton.addTarget(self, action: #selector(didTapMoreInfo), for: .touchUpInside)
-        
         bookmarkButton.addTarget(self, action: #selector(didTapBookmark), for: .touchUpInside)
-        bookmarkButton.setImage(UIImage(systemName: "book"), for: .normal)
-        bookmarkButton.setImage(UIImage(systemName: "book.fill"), for: .selected)
+        bookmarkButton.setImage(.Design.Button.unselected, for: .normal)
+        bookmarkButton.setImage(.Design.Button.selected, for: .selected)
     }
     
     private func updateBookmarkState(_ state: MissionDetailViewModel.State) {
@@ -172,7 +172,7 @@ class MissionDetailView: UIViewController {
             .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] path in
-                self?.imageViwe.setRemoteImage(with: path)
+                self?.imageViwe.setRemoteImage(with: path, placeholder: .Design.placeholderApp.view)
             }
             .store(in: &cancellables)
         
@@ -211,6 +211,14 @@ class MissionDetailView: UIViewController {
             .receive(on: RunLoop.main)
             .sink { [weak self] state in
                 self?.updateBookmarkState(state)
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$missionDate
+            .eraseToAnyPublisher()
+            .receive(on: RunLoop.main)
+            .sink { [weak self] date in
+                self?.dateLabel.text = date
             }
             .store(in: &cancellables)
     }

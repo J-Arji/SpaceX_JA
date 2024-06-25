@@ -9,7 +9,7 @@ import UIKit
 
 class MissionCell: UITableViewCell {
     
-    let margin = 16.0
+    let margin = MissionListViewModel.Constants.Size.cellTotalStackViewMargin
 
     //MARK: - Properties
     private lazy var iconImageView: UIImageView = {
@@ -23,7 +23,7 @@ class MissionCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.numberOfLines = 1
+        label.numberOfLines = MissionListViewModel.Constants.Int.defaultNumberLine
         return label
     }()
 
@@ -31,7 +31,7 @@ class MissionCell: UITableViewCell {
         var label = UILabel()
         label.textAlignment = .left
         label.lineBreakMode = .byWordWrapping
-        label.numberOfLines = 3
+        label.numberOfLines =  MissionListViewModel.Constants.Int.descriptionNumberLine
         return label
     }()
     
@@ -39,7 +39,7 @@ class MissionCell: UITableViewCell {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
-        label.numberOfLines = 1
+        label.numberOfLines =  MissionListViewModel.Constants.Int.defaultNumberLine
         return label
     }()
     
@@ -47,7 +47,7 @@ class MissionCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .right
-        label.numberOfLines = 1
+        label.numberOfLines =  MissionListViewModel.Constants.Int.defaultNumberLine
         return label
     }()
 
@@ -56,7 +56,7 @@ class MissionCell: UITableViewCell {
         var hStack = UIStackView()
         hStack.translatesAutoresizingMaskIntoConstraints = false
         hStack.axis = .horizontal
-        hStack.spacing = 8
+        hStack.spacing = margin/2
         hStack.distribution = .fill
         hStack.alignment = .top
         return hStack
@@ -90,10 +90,10 @@ class MissionCell: UITableViewCell {
     
     //MARK: - setup
     private func applaytheme() {
-        numberLabel.font = .systemFont(ofSize: 15, weight: .heavy)
-        descriptionLabel.font = .systemFont(ofSize: 11, weight: .thin)
-        statusLabel.font = .systemFont(ofSize: 12, weight: .semibold)
-        dateLabel.font = .systemFont(ofSize: 9, weight: .light)
+        numberLabel.font = .Design.title
+        descriptionLabel.font = .Design.Body
+        statusLabel.font = .Design.status
+        dateLabel.font = .Design.caption
     }
     
     private func setupLayout() {
@@ -107,32 +107,32 @@ class MissionCell: UITableViewCell {
         
         /// icon
         NSLayoutConstraint.activate([
-            dateLabel.heightAnchor.constraint(equalToConstant: 15),
-            statusLabel.heightAnchor.constraint(equalToConstant: 20),
-            numberLabel.heightAnchor.constraint(equalTo: statusLabel.heightAnchor, multiplier: 1),
-            iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor, multiplier: 1),
-            iconImageView.heightAnchor.constraint(equalToConstant: 50),
+            dateLabel.heightAnchor.constraint(equalToConstant: MissionListViewModel.Constants.Size.cellDateLabelHeight),
+            statusLabel.heightAnchor.constraint(equalToConstant: MissionListViewModel.Constants.Size.cellStatusLabelHeight),
+            numberLabel.heightAnchor.constraint(equalTo: statusLabel.heightAnchor, multiplier:  MissionListViewModel.Constants.Size.cellMultiplier),
+            iconImageView.widthAnchor.constraint(equalTo: iconImageView.heightAnchor, multiplier:  MissionListViewModel.Constants.Size.cellMultiplier),
+            iconImageView.heightAnchor.constraint(equalToConstant: MissionListViewModel.Constants.Size.cellIconImageViewHeight),
             totalStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: margin),
             totalStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -margin),
             totalStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: margin),
             totalStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -margin),
-            totalStackView.heightAnchor.constraint(equalToConstant: 120)
+            totalStackView.heightAnchor.constraint(equalToConstant: MissionListViewModel.Constants.Size.cellTotalStackViewHeight)
         ])
     }
      
     
     //MARK: - Set
     public func set(icon url: String?) {
-        self.iconImageView.setRemoteImage(with: url, placeholder:  UIImage(named: "placeholder"))
+        self.iconImageView.setRemoteImage(with: url, placeholder:  .Design.placeholderApp.cell)
     }
     
     public func set(status isSuccess: Bool) {
-        statusLabel.text = isSuccess ? "Success" : "Fail"
-        statusLabel.textColor = isSuccess ? .systemGreen : .systemRed
+        statusLabel.text =  .labels( isSuccess ? .success : .faild)
+        statusLabel.textColor = isSuccess ? .Design.Primary.success : .Design.Primary.faild
     }
     
     public func set(flight number: Int) {
-        numberLabel.text = "Number: \(number)"
+        numberLabel.text = .labels(.number) + " \(number) "
     }
     
     public func set(description: String?) {

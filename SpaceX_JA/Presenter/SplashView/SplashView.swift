@@ -15,7 +15,7 @@ class SplashView: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.style = .large
         view.hidesWhenStopped = true
-        view.tintColor = .gray
+        view.tintColor = .Design.Primary.indicator
         return view
     }()
     
@@ -23,9 +23,10 @@ class SplashView: UIViewController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
         setupView()
         bindMonitoring()
+        self.view.backgroundColor = .Design.Primary.background
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

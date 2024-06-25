@@ -11,6 +11,7 @@ import Resolver
 
 
 class MissionListViewModel {
+
     enum State: Equatable {
         case idle
         case loading
@@ -30,7 +31,7 @@ class MissionListViewModel {
 
     
     //MARK: - fetch data
-    public func fetch(launch page: Int = 1, limit: Int = 20)  {
+    public func fetch(launch page: Int = Constants.Int.page, limit: Int = Constants.Int.defaultLimit)  {
         let parameter = LaunchInput.init(limit: limit, page: page)
         Task {
             do {
@@ -51,9 +52,32 @@ class MissionListViewModel {
         guard index == lastIndex, isLoading, hasNextPage else { return }
 
         state.send(.loading)
-        fetch(launch: nextPage, limit: 50)
+        fetch(launch: nextPage, limit: Constants.Int.limit)
         
     }
 }
 
 
+
+
+extension MissionListViewModel {
+    enum Constants {
+        enum Int {
+            static let page = 1
+            static let limit = 50
+            static let defaultLimit = 20
+            static let defaultNumberLine = 1
+            static let descriptionNumberLine = 3
+        }
+        
+        enum Size {
+            static let cellTotalStackViewMargin = 16.0
+            static let cellTotalStackViewHeight = 120.0
+            static let cellStatusLabelHeight = 20.0
+            static let cellIconImageViewHeight = 50.0
+            static let cellDateLabelHeight = 15.0
+            static let cellMultiplier = 1.0
+        }
+        
+    }
+}

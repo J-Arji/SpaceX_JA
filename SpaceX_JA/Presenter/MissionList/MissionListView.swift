@@ -29,7 +29,7 @@ class MissionListView: UITableViewController {
     }
     
     private func applayTheme() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .Design.Primary.background
     }
     
     private func updateState(_ state: MissionListViewModel.State) {
@@ -112,9 +112,9 @@ extension MissionListView: NavigationProtocol { }
 //MARK: - show Alert
 extension MissionListView {
     private func showAlert(message: String) {
-        let alert = UIAlertController(title: "message Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "retry", style: .default, handler: { [weak self] action in
+        let alert = UIAlertController(title: .labels(.alert), message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: .buttons(.cancel), style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: .buttons(.retry), style: .default, handler: { [weak self] action in
             self?.viewModel.fetch()
        
         }))

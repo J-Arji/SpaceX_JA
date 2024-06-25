@@ -10,7 +10,7 @@ import Foundation
 // MARK: - SpacexApi
 /// This enum use for  Appartement API constance
 ///
-enum SpacexApi {
+enum API {
     case base
     case image
     
@@ -32,7 +32,7 @@ enum SpacexApi {
 }
 
 
-extension SpacexApi {
+extension API {
     enum Path {
         static let query = "launches/query"
     }

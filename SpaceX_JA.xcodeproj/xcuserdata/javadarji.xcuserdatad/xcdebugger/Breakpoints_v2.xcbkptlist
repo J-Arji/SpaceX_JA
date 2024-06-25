@@ -30,8 +30,8 @@
             filePath = "SpaceX_JA/Presenter/MissionDetail/MissionDetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "234"
+            endingLineNumber = "234"
             landmarkName = "didTapMoreInfo()"
             landmarkType = "7">
          </BreakpointContent>
