@@ -30,7 +30,7 @@ extension MissionRemoteDataSourceImp {
         var path: String {
             switch self {
             case .list:
-                return SpacexApi.Path.query
+                return API.Path.query
             }
         }
         

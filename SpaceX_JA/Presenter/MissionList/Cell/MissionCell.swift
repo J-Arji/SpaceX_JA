@@ -127,12 +127,12 @@ class MissionCell: UITableViewCell {
     }
     
     public func set(status isSuccess: Bool) {
-        statusLabel.text = isSuccess ? "Success" : "Fail"
+        statusLabel.text =  .labels( isSuccess ? .success : .faild)
         statusLabel.textColor = isSuccess ? .systemGreen : .systemRed
     }
     
     public func set(flight number: Int) {
-        numberLabel.text = "Number: \(number)"
+        numberLabel.text = .labels(.number) + " \(number) "
     }
     
     public func set(description: String?) {
