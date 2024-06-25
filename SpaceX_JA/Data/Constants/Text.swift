@@ -28,7 +28,13 @@ enum LabelText: String {
 
 
 enum ImageText {
-    enum placeholder: String {
+    enum Placeholder: String {
         case cell = "placeholder"
+    }
+    
+    enum ButtonText: String {
+        case selectedMark = "book.fill"
+        case unselectedMark = "book"
+        case info = "info.circle"
     }
 }

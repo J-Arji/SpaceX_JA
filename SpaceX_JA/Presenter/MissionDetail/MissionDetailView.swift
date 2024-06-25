@@ -51,7 +51,7 @@ class MissionDetailView: UIViewController {
     
     private lazy var moreInfoButton: UIButton = {
         var button = UIButton()
-        button.setImage(UIImage(systemName: "info.circle"), for: .normal)
+        button.setImage( .Design.Button.info, for: .normal)
         button.tintColor = .systemBlue
         return button
     }()
@@ -138,10 +138,9 @@ class MissionDetailView: UIViewController {
     
     private func setupView() {
         moreInfoButton.addTarget(self, action: #selector(didTapMoreInfo), for: .touchUpInside)
-        
         bookmarkButton.addTarget(self, action: #selector(didTapBookmark), for: .touchUpInside)
-        bookmarkButton.setImage(UIImage(systemName: "book"), for: .normal)
-        bookmarkButton.setImage(UIImage(systemName: "book.fill"), for: .selected)
+        bookmarkButton.setImage( .Design.Button.unselected, for: .normal)
+        bookmarkButton.setImage(.Design.Button.selected, for: .selected)
     }
     
     private func updateBookmarkState(_ state: MissionDetailViewModel.State) {
@@ -172,7 +171,7 @@ class MissionDetailView: UIViewController {
             .eraseToAnyPublisher()
             .receive(on: RunLoop.main)
             .sink { [weak self] path in
-                self?.imageViwe.setRemoteImage(with: path)
+                self?.imageViwe.setRemoteImage(with: path, placeholder: .Design.placeholderApp.view)
             }
             .store(in: &cancellables)
         

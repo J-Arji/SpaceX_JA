@@ -63,6 +63,7 @@
 		69CB82832C2AC22F00C4F96B /* String + Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB82822C2AC22F00C4F96B /* String + Localize.swift */; };
 		69CB82852C2AC8A500C4F96B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 69CB82842C2AC8A500C4F96B /* Localizable.xcstrings */; };
 		69CB82872C2ACBDA00C4F96B /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB82862C2ACBDA00C4F96B /* Text.swift */; };
+		69CB828B2C2AD8B500C4F96B /* UIImage  + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -132,6 +133,7 @@
 		69CB82822C2AC22F00C4F96B /* String + Localize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Localize.swift"; sourceTree = "<group>"; };
 		69CB82842C2AC8A500C4F96B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		69CB82862C2ACBDA00C4F96B /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage  + Design.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				69CB82822C2AC22F00C4F96B /* String + Localize.swift */,
+				69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */,
 				69CB82862C2ACBDA00C4F96B /* Text.swift */,
 				6954129B2C24B1E800AA46FD /* DataTransferEroor.swift */,
 				695412A12C25739100AA46FD /* SpacexApi.swift */,
@@ -532,6 +535,7 @@
 				695412E22C2613D800AA46FD /* Codable+Dic.swift in Sources */,
 				695413112C28290D00AA46FD /* UIimageView+kf.swift in Sources */,
 				6954129F2C24B75800AA46FD /* Dictionary+Serialization.swift in Sources */,
+				69CB828B2C2AD8B500C4F96B /* UIImage  + Design.swift in Sources */,
 				695412BB2C258DA100AA46FD /* MissionListView.swift in Sources */,
 				695412D42C25B11B00AA46FD /* CrewDTO.swift in Sources */,
 				695412BD2C258DB400AA46FD /* MissionListViewModel.swift in Sources */,

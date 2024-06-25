@@ -123,7 +123,7 @@ class MissionCell: UITableViewCell {
     
     //MARK: - Set
     public func set(icon url: String?) {
-        self.iconImageView.setRemoteImage(with: url, placeholder:  UIImage(named: "placeholder"))
+        self.iconImageView.setRemoteImage(with: url, placeholder:  .Design.placeholderApp.cell)
     }
     
     public func set(status isSuccess: Bool) {
