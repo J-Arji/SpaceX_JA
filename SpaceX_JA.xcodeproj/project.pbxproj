@@ -66,8 +66,6 @@
 		69CB828B2C2AD8B500C4F96B /* UIImage  + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */; };
 		69CB828D2C2ADFA200C4F96B /* UIFont + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828C2C2ADFA200C4F96B /* UIFont + Design.swift */; };
 		69CB828F2C2AE1CC00C4F96B /* UIColor + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828E2C2AE1CC00C4F96B /* UIColor + Design.swift */; };
-		69CB82912C2AE59D00C4F96B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB82902C2AE59D00C4F96B /* Constants.swift */; };
-		69CB82932C2AE5DD00C4F96B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB82922C2AE5DD00C4F96B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -140,8 +138,6 @@
 		69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage  + Design.swift"; sourceTree = "<group>"; };
 		69CB828C2C2ADFA200C4F96B /* UIFont + Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Design.swift"; sourceTree = "<group>"; };
 		69CB828E2C2AE1CC00C4F96B /* UIColor + Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Design.swift"; sourceTree = "<group>"; };
-		69CB82902C2AE59D00C4F96B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		69CB82922C2AE5DD00C4F96B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,7 +276,6 @@
 			children = (
 				69BFEFF52C28972F00B14063 /* MissionDetailView.swift */,
 				69BFEFF72C28974100B14063 /* MissionDetailViewModel.swift */,
-				69CB82902C2AE59D00C4F96B /* Constants.swift */,
 			);
 			path = MissionDetail;
 			sourceTree = "<group>";
@@ -291,7 +286,6 @@
 				6913433D2C28BEE7002EF536 /* Helper */,
 				695413032C2768E100AA46FD /* SplashView */,
 				695412B22C258A7900AA46FD /* MissionList */,
-				69CB82922C2AE5DD00C4F96B /* Constants.swift */,
 				695412B32C258A9F00AA46FD /* MissionDetail */,
 				695412FA2C27622300AA46FD /* Extension */,
 			);
@@ -542,8 +536,6 @@
 				6954130C2C27FB5E00AA46FD /* URLRequest+CURL.swift in Sources */,
 				69CB828F2C2AE1CC00C4F96B /* UIColor + Design.swift in Sources */,
 				6954129C2C24B1E800AA46FD /* DataTransferEroor.swift in Sources */,
-				69CB82932C2AE5DD00C4F96B /* Constants.swift in Sources */,
-				69CB82912C2AE59D00C4F96B /* Constants.swift in Sources */,
 				695412D02C25AEA500AA46FD /* LinksDTO.swift in Sources */,
 				695412DC2C25F8E100AA46FD /* String+Date.swift in Sources */,
 				69CB828D2C2ADFA200C4F96B /* UIFont + Design.swift in Sources */,

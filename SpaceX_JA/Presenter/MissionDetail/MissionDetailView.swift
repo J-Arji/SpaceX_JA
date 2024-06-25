@@ -16,7 +16,7 @@ class MissionDetailView: UIViewController {
         var vStack = UIStackView()
         vStack.translatesAutoresizingMaskIntoConstraints = false
         vStack.axis = .vertical
-        vStack.spacing = 8
+        vStack.spacing = MissionDetailViewModel.Constants.Size.space
         vStack.distribution = .fill
         vStack.alignment = .top
         return vStack
@@ -60,7 +60,7 @@ class MissionDetailView: UIViewController {
         var label = UILabel()
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .justified
-        label.numberOfLines = 0
+        label.numberOfLines = MissionDetailViewModel.Constants.Int.descriptionNumberLine
         return label
     }()
     
@@ -107,26 +107,26 @@ class MissionDetailView: UIViewController {
         titleStackView.addArrangedSubview(titleLabel)
         titleStackView.addArrangedSubview(moreInfoButton)
         view.addSubview(bookmarkButton)
-        
+        let padding = MissionDetailViewModel.Constants.Size.padding
         NSLayoutConstraint.activate([
-            totalStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
-            totalStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            totalStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
+            totalStackView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: padding),
+            totalStackView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
+            totalStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
             
-            imageViwe.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
-            imageViwe.heightAnchor.constraint(equalToConstant: 250),
+            imageViwe.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            imageViwe.heightAnchor.constraint(equalToConstant: MissionDetailViewModel.Constants.Size.imageViweHeight),
             
-            titleStackView.heightAnchor.constraint(equalToConstant: 30),
-            titleStackView.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
-            dateLabel.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
-            dateLabel.heightAnchor.constraint(equalToConstant: 20)
+            titleStackView.heightAnchor.constraint(equalToConstant:  MissionDetailViewModel.Constants.Size.titleStackViewHeight),
+            titleStackView.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            dateLabel.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            dateLabel.heightAnchor.constraint(equalToConstant: MissionDetailViewModel.Constants.Size.dateLabelHeigh)
         ])
         
         NSLayoutConstraint.activate([
-            bookmarkButton.widthAnchor.constraint(equalToConstant: 30),
-            bookmarkButton.heightAnchor.constraint(equalTo: bookmarkButton.widthAnchor, multiplier: 1),
-            bookmarkButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
-            bookmarkButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10)
+            bookmarkButton.widthAnchor.constraint(equalToConstant:  MissionDetailViewModel.Constants.Size.bookmarkButtonWidth),
+            bookmarkButton.heightAnchor.constraint(equalTo: bookmarkButton.widthAnchor, multiplier: MissionDetailViewModel.Constants.Size.multiplier),
+            bookmarkButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -padding),
+            bookmarkButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: MissionDetailViewModel.Constants.Size.bookmarkTopPadding)
         ])
     }
     
