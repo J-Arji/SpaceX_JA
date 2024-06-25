@@ -197,7 +197,6 @@
 				695412B42C258AB900AA46FD /* Presenter */,
 				695412B52C258AC200AA46FD /* Domain */,
 				695412B62C258AC800AA46FD /* Data */,
-				695412A72C25824500AA46FD /* Utilities */,
 				695412962C24ABF700AA46FD /* Resources */,
 			);
 			path = SpaceX_JA;
@@ -295,9 +294,10 @@
 		695412B52C258AC200AA46FD /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				695412C02C25995300AA46FD /* Entitie */,
+				695412C02C25995300AA46FD /* Entity */,
 				695413062C278BE600AA46FD /* Helper */,
 				695412BF2C2598E700AA46FD /* Repository */,
+				695412A72C25824500AA46FD /* Utilities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -322,13 +322,13 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		695412C02C25995300AA46FD /* Entitie */ = {
+		695412C02C25995300AA46FD /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				695412D72C25B35600AA46FD /* LaunchesPage.swift */,
 				695412C92C25A40500AA46FD /* Launches.swift */,
 			);
-			path = Entitie;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		695412C52C259DE500AA46FD /* Object */ = {
