@@ -37,7 +37,7 @@ open class LoadState {
         let activity = UIActivityIndicatorView()
         activity.translatesAutoresizingMaskIntoConstraints = false
         activity.style = .medium
-        activity.color = .black
+        activity.color = .Design.Primary.indicator
         activity.hidesWhenStopped = true
         return activity
     }()

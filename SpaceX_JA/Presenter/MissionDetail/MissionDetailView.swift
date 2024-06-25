@@ -25,7 +25,7 @@ class MissionDetailView: UIViewController {
     private lazy var bookmarkButton: UIButton = {
         var button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.tintColor = .systemBlue
+        button.tintColor = .Design.Primary.buttonTint
         return button
     }()
     
@@ -52,7 +52,7 @@ class MissionDetailView: UIViewController {
     private lazy var moreInfoButton: UIButton = {
         var button = UIButton()
         button.setImage( .Design.Button.info, for: .normal)
-        button.tintColor = .systemBlue
+        button.tintColor = .Design.Primary.buttonTint
         return button
     }()
     
@@ -131,7 +131,7 @@ class MissionDetailView: UIViewController {
     }
     
     private func applayTheme() {
-        view.backgroundColor = .white
+        view.backgroundColor = .Design.Primary.background
         titleLabel.font = .Design.title
         descriptionLabel.font = .Design.Body
         dateLabel.font = .Design.caption

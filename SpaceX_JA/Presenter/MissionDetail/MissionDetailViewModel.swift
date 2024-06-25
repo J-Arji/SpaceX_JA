@@ -10,7 +10,6 @@ import Combine
 import Resolver
 
 class MissionDetailViewModel {
-    
     enum State: Equatable {
         case loading
         case error(String)

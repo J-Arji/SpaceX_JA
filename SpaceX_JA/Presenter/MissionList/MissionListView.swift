@@ -29,7 +29,7 @@ class MissionListView: UITableViewController {
     }
     
     private func applayTheme() {
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = .Design.Primary.background
     }
     
     private func updateState(_ state: MissionListViewModel.State) {
