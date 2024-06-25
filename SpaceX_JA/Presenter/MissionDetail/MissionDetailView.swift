@@ -67,6 +67,7 @@ class MissionDetailView: UIViewController {
     private lazy var dateLabel: UILabel = {
         var label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
         return label
     }()
     
@@ -117,7 +118,7 @@ class MissionDetailView: UIViewController {
             
             titleStackView.heightAnchor.constraint(equalToConstant: 30),
             titleStackView.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
-            
+            dateLabel.widthAnchor.constraint(equalTo: totalStackView.widthAnchor, multiplier: 1),
             dateLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
         
@@ -131,15 +132,15 @@ class MissionDetailView: UIViewController {
     
     private func applayTheme() {
         view.backgroundColor = .white
-        titleLabel.font = .systemFont(ofSize: 15, weight: .heavy)
-        descriptionLabel.font = .systemFont(ofSize: 12, weight: .medium)
-        dateLabel.font = .systemFont(ofSize: 11, weight: .medium)
+        titleLabel.font = .Design.title
+        descriptionLabel.font = .Design.Body
+        dateLabel.font = .Design.caption
     }
     
     private func setupView() {
         moreInfoButton.addTarget(self, action: #selector(didTapMoreInfo), for: .touchUpInside)
         bookmarkButton.addTarget(self, action: #selector(didTapBookmark), for: .touchUpInside)
-        bookmarkButton.setImage( .Design.Button.unselected, for: .normal)
+        bookmarkButton.setImage(.Design.Button.unselected, for: .normal)
         bookmarkButton.setImage(.Design.Button.selected, for: .selected)
     }
     
@@ -210,6 +211,14 @@ class MissionDetailView: UIViewController {
             .receive(on: RunLoop.main)
             .sink { [weak self] state in
                 self?.updateBookmarkState(state)
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$missionDate
+            .eraseToAnyPublisher()
+            .receive(on: RunLoop.main)
+            .sink { [weak self] date in
+                self?.dateLabel.text = date
             }
             .store(in: &cancellables)
     }

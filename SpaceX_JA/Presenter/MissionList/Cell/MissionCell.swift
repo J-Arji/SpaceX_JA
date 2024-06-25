@@ -90,10 +90,10 @@ class MissionCell: UITableViewCell {
     
     //MARK: - setup
     private func applaytheme() {
-        numberLabel.font = .systemFont(ofSize: 15, weight: .heavy)
-        descriptionLabel.font = .systemFont(ofSize: 11, weight: .thin)
-        statusLabel.font = .systemFont(ofSize: 12, weight: .semibold)
-        dateLabel.font = .systemFont(ofSize: 9, weight: .light)
+        numberLabel.font = .Design.title
+        descriptionLabel.font = .Design.Body
+        statusLabel.font = .Design.status
+        dateLabel.font = .Design.caption
     }
     
     private func setupLayout() {

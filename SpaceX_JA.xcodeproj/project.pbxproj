@@ -64,6 +64,7 @@
 		69CB82852C2AC8A500C4F96B /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 69CB82842C2AC8A500C4F96B /* Localizable.xcstrings */; };
 		69CB82872C2ACBDA00C4F96B /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB82862C2ACBDA00C4F96B /* Text.swift */; };
 		69CB828B2C2AD8B500C4F96B /* UIImage  + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */; };
+		69CB828D2C2ADFA200C4F96B /* UIFont + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828C2C2ADFA200C4F96B /* UIFont + Design.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -134,6 +135,7 @@
 		69CB82842C2AC8A500C4F96B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		69CB82862C2ACBDA00C4F96B /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage  + Design.swift"; sourceTree = "<group>"; };
+		69CB828C2C2ADFA200C4F96B /* UIFont + Design.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + Design.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +240,7 @@
 			children = (
 				69CB82822C2AC22F00C4F96B /* String + Localize.swift */,
 				69CB828A2C2AD8B500C4F96B /* UIImage  + Design.swift */,
+				69CB828C2C2ADFA200C4F96B /* UIFont + Design.swift */,
 				69CB82862C2ACBDA00C4F96B /* Text.swift */,
 				6954129B2C24B1E800AA46FD /* DataTransferEroor.swift */,
 				695412A12C25739100AA46FD /* SpacexApi.swift */,
@@ -531,6 +534,7 @@
 				6954129C2C24B1E800AA46FD /* DataTransferEroor.swift in Sources */,
 				695412D02C25AEA500AA46FD /* LinksDTO.swift in Sources */,
 				695412DC2C25F8E100AA46FD /* String+Date.swift in Sources */,
+				69CB828D2C2ADFA200C4F96B /* UIFont + Design.swift in Sources */,
 				695413002C27675D00AA46FD /* NetworkMonitor.swift in Sources */,
 				695412E22C2613D800AA46FD /* Codable+Dic.swift in Sources */,
 				695413112C28290D00AA46FD /* UIimageView+kf.swift in Sources */,
