@@ -35,9 +35,8 @@ The purpose of this project is to show the missions of SpaceX company's rockets.
 
 # Dependency
 It uses SPM for dependency management and you do not need to install the other third-party management ([Swift Package Manager](https://github.com/apple/swift-package-manager))
-- [Kingfisher](https://github.com/onevcat/Kingfisher): Kingfisher is a powerful library for downloading and caching images from the web.
 - [Realm](https://github.com/realm/realm-swift): Realm is a mobile database that runs directly inside phones, tablets or wearables
-- [Resolver](https://github.com/hmlongco/Resolver): Resolver is an ultralight Dependency Injection system
+- [FActory](https://github.com/hmlongco/Factory): Factory is A new approach to Container-Based Dependency Injection for Swift
 
 
 # Contributions
