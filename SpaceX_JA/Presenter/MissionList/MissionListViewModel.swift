@@ -7,10 +7,9 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
-
-class MissionListViewModel {
+class MissionListViewModel: ObservableObject {
 
     enum State: Equatable {
         case idle
@@ -21,7 +20,7 @@ class MissionListViewModel {
     }
     
     //MARK: - Properties
-    @Injected var service: MissionListRepository
+    @Injected(\.missionlistRepository) private var service
     private (set) var state = CurrentValueSubject<State, Never>(.idle)
     private (set) var mission: LaunchesPage?
     private var hasNextPage: Bool {

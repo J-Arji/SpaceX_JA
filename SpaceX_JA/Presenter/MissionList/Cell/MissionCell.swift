@@ -150,5 +150,6 @@ class MissionCell: UITableViewCell {
         descriptionLabel.text = ""
         numberLabel.text = ""
         statusLabel.text = ""
+        iconImageView.image = nil
     }
 }

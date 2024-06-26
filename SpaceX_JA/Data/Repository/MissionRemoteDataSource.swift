@@ -6,15 +6,17 @@
 //
 
 import Foundation
-import Resolver
+import Factory
 
 protocol MissionRemoteDataSource {
     func fetchList(input: LaunchInput) async throws -> LaunchesDTO
 }
 
 class MissionRemoteDataSourceImp: MissionRemoteDataSource {
-    @Injected private var client: APIClient
+    
+    @Injected(\.networkService) private var client
 
+    
     func fetchList(input: LaunchInput) async throws -> LaunchesDTO {
         let data = try await client.request(Router.list(input: input))
         return try data.decoded() as LaunchesDTO

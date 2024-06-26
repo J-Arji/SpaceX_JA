@@ -19,6 +19,11 @@ protocol APIClient {
 }
 
 class APIClientImp: APIClient {
+    var task: URLSession
+    
+    init(_ task: URLSession = URLSession.shared) {
+        self.task = task
+    }
     
     func request(_ endpoint: Endpoint) async throws -> Data {
         guard let request = try? endpoint.asURLRequest()
@@ -26,7 +31,7 @@ class APIClientImp: APIClient {
 #if DEBUG
         print("👢", request.curlString)
 #endif
-        let (data, responseTempo) = try await URLSession.shared.data(for: request, delegate: nil)
+        let (data, responseTempo) = try await task.data(for: request, delegate: nil)
         guard let response = responseTempo as? HTTPURLResponse
         else { throw DataTransferError.noResponse }
         

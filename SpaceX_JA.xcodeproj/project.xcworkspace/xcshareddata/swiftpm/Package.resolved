@@ -1,13 +1,13 @@
 {
-  "originHash" : "e0a6047a533cdcdd75d861957602f99df66afe639bcd7cd1fae21e3e8bdbe57b",
+  "originHash" : "10ea37250a8782c020072a0c62a6e8fedaf4916fc80a9ce26cb52f8b4c1dc405",
   "pins" : [
     {
-      "identity" : "kingfisher",
+      "identity" : "factory",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "location" : "https://github.com/hmlongco/Factory",
       "state" : {
-        "revision" : "2ef543ee21d63734e1c004ad6c870255e8716c50",
-        "version" : "7.12.0"
+        "revision" : "587995f7d5cc667951d635fbf6b4252324ba0439",
+        "version" : "2.3.2"
       }
     },
     {
@@ -26,15 +26,6 @@
       "state" : {
         "revision" : "4c4413abd0cd2221f59318f800960fe5bddc1494",
         "version" : "10.51.0"
-      }
-    },
-    {
-      "identity" : "resolver?tab=readme-ov-file",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hmlongco/Resolver?tab=readme-ov-file",
-      "state" : {
-        "revision" : "47602af1ac8d7952299fbd0bda3cfbd12cf3a8ca",
-        "version" : "1.5.1"
       }
     }
   ],
