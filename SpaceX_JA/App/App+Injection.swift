@@ -6,23 +6,33 @@
 //
 
 import Foundation
-import Resolver
+import Factory
 
-//MARK: - Extention Resolver
-extension Resolver: ResolverRegistering {
+//MARK: - Extention Container
+extension Container {
+    //MARK: - Service
     
-    public static func registerAllServices() {
-        registerMissionLayer()
+    var networkService: Factory<APIClient> {
+        Factory(self) { APIClientImp() }
+            .singleton
+    }
+   
+    var missionRemoteService: Factory<MissionRemoteDataSource> {
+        Factory(self) { MissionRemoteDataSourceImp() }
     }
     
-    //MARK: - register Mission List
-    public static func registerMissionLayer() {
-        register { APIClientImp() }.implements(APIClient.self)
-        register { MissionRepositoryImp() }.implements(MissionListRepository.self)
-        register { MissionRepositoryImp() }.implements(MissionRepository.self)
-        register { MissionRemoteDataSourceImp() }.implements(MissionRemoteDataSource.self)
-        register { MissionLocalDataSourceImp()}.implements(MissionLocalDataSource.self)
+    var MissionLocalDataService: Factory<MissionLocalDataSource> {
+        Factory(self) { MissionLocalDataSourceImp() }
     }
     
+    
+    //MARK: - Repository
+    var missionlistRepository: Factory<MissionListRepository> {
+        Factory(self) { MissionRepositoryImp() }
+    }
+    
+    var missionDetailReposiotry: Factory<MissionRepository> {
+        Factory(self) { MissionRepositoryImp() }
+    }
     
 }

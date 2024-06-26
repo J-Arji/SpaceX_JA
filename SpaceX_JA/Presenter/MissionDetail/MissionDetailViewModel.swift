@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import Resolver
+import Factory
 
 class MissionDetailViewModel {
     enum State: Equatable {
@@ -17,7 +17,8 @@ class MissionDetailViewModel {
     }
     
     //MARK: - properties
-    @Injected private var service: MissionRepository
+    @Injected(\.missionDetailReposiotry) private var service
+    
     private (set) var state = PassthroughSubject<State, Never>()
     private var cancellables = Set<AnyCancellable>()
     private var mission: Launche

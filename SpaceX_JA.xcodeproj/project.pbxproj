@@ -37,9 +37,6 @@
 		695412E22C2613D800AA46FD /* Codable+Dic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412E12C2613D800AA46FD /* Codable+Dic.swift */; };
 		695412E42C26162500AA46FD /* LaunchInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412E32C26162500AA46FD /* LaunchInput.swift */; };
 		695412E62C26176100AA46FD /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412E52C26176100AA46FD /* Sort.swift */; };
-		695412E92C261B1A00AA46FD /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 695412E82C261B1A00AA46FD /* Resolver */; };
-		695412EB2C261B1A00AA46FD /* Resolver-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 695412EA2C261B1A00AA46FD /* Resolver-Dynamic */; };
-		695412ED2C261B1A00AA46FD /* Resolver-Static in Frameworks */ = {isa = PBXBuildFile; productRef = 695412EC2C261B1A00AA46FD /* Resolver-Static */; };
 		695412EF2C261C3E00AA46FD /* App+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412EE2C261C3E00AA46FD /* App+Injection.swift */; };
 		695412F22C26251000AA46FD /* MissionLocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F12C26251000AA46FD /* MissionLocalDataSource.swift */; };
 		695412F42C26296500AA46FD /* MissionRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695412F32C26296500AA46FD /* MissionRemoteDataSource.swift */; };
@@ -66,6 +63,7 @@
 		69CB828D2C2ADFA200C4F96B /* UIFont + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828C2C2ADFA200C4F96B /* UIFont + Design.swift */; };
 		69CB828F2C2AE1CC00C4F96B /* UIColor + Design.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB828E2C2AE1CC00C4F96B /* UIColor + Design.swift */; };
 		69CB82952C2B8DBC00C4F96B /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB82942C2B8DBC00C4F96B /* ImageCache.swift */; };
+		69CB82982C2B952900C4F96B /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 69CB82972C2B952900C4F96B /* Factory */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -146,10 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				695412EB2C261B1A00AA46FD /* Resolver-Dynamic in Frameworks */,
-				695412ED2C261B1A00AA46FD /* Resolver-Static in Frameworks */,
 				69BFEFF32C28617700B14063 /* RealmSwift in Frameworks */,
-				695412E92C261B1A00AA46FD /* Resolver in Frameworks */,
+				69CB82982C2B952900C4F96B /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,10 +432,8 @@
 			);
 			name = SpaceX_JA;
 			packageProductDependencies = (
-				695412E82C261B1A00AA46FD /* Resolver */,
-				695412EA2C261B1A00AA46FD /* Resolver-Dynamic */,
-				695412EC2C261B1A00AA46FD /* Resolver-Static */,
 				69BFEFF22C28617700B14063 /* RealmSwift */,
+				69CB82972C2B952900C4F96B /* Factory */,
 			);
 			productName = SpaceX_JA;
 			productReference = 695412752C2479B800AA46FD /* SpaceX_JA.app */;
@@ -470,8 +464,8 @@
 			);
 			mainGroup = 6954126C2C2479B800AA46FD;
 			packageReferences = (
-				695412E72C261B1A00AA46FD /* XCRemoteSwiftPackageReference "Resolver" */,
 				694B990F2C2860800068E18C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				69CB82962C2B952900C4F96B /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 695412762C2479B800AA46FD /* Products */;
 			projectDirPath = "";
@@ -777,36 +771,26 @@
 				version = 10.51.0;
 			};
 		};
-		695412E72C261B1A00AA46FD /* XCRemoteSwiftPackageReference "Resolver" */ = {
+		69CB82962C2B952900C4F96B /* XCRemoteSwiftPackageReference "Factory" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver?tab=readme-ov-file";
+			repositoryURL = "https://github.com/hmlongco/Factory";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.1;
+				minimumVersion = 2.3.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		695412E82C261B1A00AA46FD /* Resolver */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 695412E72C261B1A00AA46FD /* XCRemoteSwiftPackageReference "Resolver" */;
-			productName = Resolver;
-		};
-		695412EA2C261B1A00AA46FD /* Resolver-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 695412E72C261B1A00AA46FD /* XCRemoteSwiftPackageReference "Resolver" */;
-			productName = "Resolver-Dynamic";
-		};
-		695412EC2C261B1A00AA46FD /* Resolver-Static */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 695412E72C261B1A00AA46FD /* XCRemoteSwiftPackageReference "Resolver" */;
-			productName = "Resolver-Static";
-		};
 		69BFEFF22C28617700B14063 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 694B990F2C2860800068E18C /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		69CB82972C2B952900C4F96B /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69CB82962C2B952900C4F96B /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
