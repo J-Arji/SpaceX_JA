@@ -7,9 +7,9 @@
 
 import UIKit
 
-//MARK: - ImageLoader
-actor ImageLoader {
-    static var shared = ImageLoader()
+//MARK: - ImageCache
+actor ImageCache {
+    static var shared = ImageCache()
     
     private let imageCache = NSCache<NSString, UIImage>()
     

@@ -14,7 +14,6 @@ extension Container {
     
     var networkService: Factory<APIClient> {
         Factory(self) { APIClientImp() }
-            .singleton
     }
    
     var missionRemoteService: Factory<MissionRemoteDataSource> {
