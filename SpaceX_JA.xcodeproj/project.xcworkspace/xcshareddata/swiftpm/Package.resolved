@@ -1,6 +1,15 @@
 {
-  "originHash" : "e460ba81d7fa51bcc6bbfdb162e2e6db13545157d0d8798e033200e20e1081fa",
+  "originHash" : "10ea37250a8782c020072a0c62a6e8fedaf4916fc80a9ce26cb52f8b4c1dc405",
   "pins" : [
+    {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory",
+      "state" : {
+        "revision" : "587995f7d5cc667951d635fbf6b4252324ba0439",
+        "version" : "2.3.2"
+      }
+    },
     {
       "identity" : "realm-core",
       "kind" : "remoteSourceControl",
@@ -17,15 +26,6 @@
       "state" : {
         "revision" : "4c4413abd0cd2221f59318f800960fe5bddc1494",
         "version" : "10.51.0"
-      }
-    },
-    {
-      "identity" : "resolver?tab=readme-ov-file",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hmlongco/Resolver?tab=readme-ov-file",
-      "state" : {
-        "revision" : "47602af1ac8d7952299fbd0bda3cfbd12cf3a8ca",
-        "version" : "1.5.1"
       }
     }
   ],
