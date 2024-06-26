@@ -9,15 +9,15 @@ import UIKit
 import Kingfisher
 import SwiftUI
 
-protocol ImageLoaderProtocol: AnyObject {
+protocol ImageDownloaderProtocol: AnyObject {
     func setRemoteImage(with path: String?, placeholder: UIImage?)
 }
 
 
-extension UIImageView: ImageLoaderProtocol { }
+extension UIImageView: ImageDownloaderProtocol { }
 
 
-extension ImageLoaderProtocol where Self: UIImageView {
+extension ImageDownloaderProtocol where Self: UIImageView {
     
     @MainActor func setRemoteImage(with path: String?, placeholder: UIImage? = nil) {
 
@@ -26,7 +26,7 @@ extension ImageLoaderProtocol where Self: UIImageView {
         
         Task {
             do {
-                let imageTempo = try await ImageLoader.shared.load(with: path)
+                let imageTempo = try await ImageCache.shared.load(with: path)
                 self.image =  imageTempo.preparingForDisplay()
                 self.loadState.stopAnimating()
             } catch {
