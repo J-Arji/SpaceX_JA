@@ -38,7 +38,7 @@ class MissionDetailViewModel {
 
     
     public func updateUI() {
-        imageUrl = mission.icon
+        imageUrl = mission.image
         name = mission.name
         missionDate = mission.dateUTC?.toString
         detail = mission.details
