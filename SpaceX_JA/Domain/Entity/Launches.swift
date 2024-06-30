@@ -18,6 +18,7 @@ struct Launche: Equatable, Identifiable {
     let details : String?
     var wikipediaLink: String?
     var icon: String?
+    var image: String?
 }
 
 // MARK: - Extension Launche
@@ -33,6 +34,7 @@ extension Launche {
         details = dto.details
         wikipediaLink = dto.links?.wikipedia
         icon = dto.links?.patch?.small
+        image = dto.links?.flickr?.original?.first
     }
 }
 
